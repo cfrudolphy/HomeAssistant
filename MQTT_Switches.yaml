@@ -1,0 +1,20 @@
+# MQTT_Switches.yaml
+# This is a yaml file containing the setup of all my MQTT_Switches
+
+# Dining Room Light Switch 
+# Homeseer Node: 13
+# Ref ID: 27 Name: Dining Room Light Central Scene
+# Ref ID: 28 Name: Dining Room Light
+
+light:
+  - platform: mqtt
+    name: Dining Room Light
+    state_topic: "CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light"
+    command_topic: "CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light/Control"
+    brightness_state_topic: "CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light"
+    brightness_command_topic: "CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light/Control"
+    payload_on: "99"
+    payload_off: "0"
+    brightness_scale: "99"
+    on_command_type: brightness
+    optimistic: false
