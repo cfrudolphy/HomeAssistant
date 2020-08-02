@@ -13,7 +13,7 @@
     payload_off: "0"
     unique_id: "DiningRoomLight"
 #    brightness_scale: "99"
-    on_command_type: brightness
+#    on_command_type: brightness
     brightness_state_topic: "CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light"
     brightness_command_topic: "CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light/Control"
     state_topic: "CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light"
