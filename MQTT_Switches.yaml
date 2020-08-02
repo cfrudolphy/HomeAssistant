@@ -6,7 +6,7 @@
 # Ref ID: 27 Name: Dining Room Light Central Scene
 # Ref ID: 28 Name: Dining Room Light
 
-light:
+
   - platform: mqtt
     name: Dining Room Light
     state_topic: "CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light"
