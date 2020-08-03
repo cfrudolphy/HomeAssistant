@@ -50,7 +50,7 @@
     payload_off: "0"
     unique_id: "KitchenDishwasherSwitch"
     state_topic: "CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power"
-    command_topic: "CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Diswasher_Power/Control"
+    command_topic: "CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power/Control"
     optimistic: false
 
 # Outside Entry Way Light Switch
