@@ -23,10 +23,10 @@
 # Ref ID: 41 Name: Living Room Light
 
   - platform: mqtt
-    name: "Living Room Light"
+    name: "Living Room Fan Light"
     payload_on: "99"
     payload_off: "0"
-    unique_id: "LivingRoomLight"
+    unique_id: "LivingRoomFanLight"
     brightness_scale: "99"
     on_command_type: brightness
     brightness_state_topic: "CRUD-06/mcsMQTT/Living_Room/Lighting/Living_Room_Light"
@@ -84,4 +84,21 @@
     brightness_command_topic: "CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_1/Control"
     state_topic: "CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_1"
     command_topic: "CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_1/Control"
+    optimistic: false
+
+# Master Bedroom Fan Light
+# Homeseer Node: 22
+# Ref ID: 562 Name: Master Bedroom Fan Light Switch
+
+  - platform: mqtt
+    name: "Master Bedroom Fan Light"
+    payload_on: "99"
+    payload_off: "0"
+    unique_id: "MasterBedroomFanLight"
+    brightness_scale: "99"
+    on_command_type: brightness
+    brightness_state_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch"
+    brightness_command_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch/Control"
+    state_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch"
+    command_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch/Control"
     optimistic: false
