@@ -7,10 +7,14 @@
 
   - platform: mqtt
     name: "Back Door Lock"
+    unique_id: "BackDoorLock"
     command_topic: "CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Lock/Control"
     state_topic: "CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Lock"
-    payload_lock: "255"
-    payload_unlock: "0"
+    payload_lock: "lock"
+    payload_unlock: "unlock"
+    value_template: "{{value[:-2] | lower }}"
+    qos: 1
+    retain: false
     optimistic: false
 
 # Front Door Lock
