@@ -1,0 +1,54 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+homeassistant:
+  name: 286ATS
+  latitude: 30.351803
+  longitude: -95.593334
+  elevation: 79
+  unit_system: imperial
+  time_zone: America/Chicago
+  customize: !include customize.yaml
+  
+
+  
+#Google Gmail notify setup
+notify:
+  - name: Gmail
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: cfrudolphy@gmail.com
+    encryption: starttls
+    username: cfrudolphy@gmail.com
+    password: !secret gmail
+    recipient:
+      - cfrudolphy@gmail.com
+      - carudolphy@gmail.com
+    sender_name: homeassistant@ccrudolphy.com
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# MQTT Z-wave switches (lights & appliances no Dimmers) setup in Homeseer
+switch: !include MQTT_Switches.yaml
+
+# MQTT Z-wave lights (Dimmers) setup in Homeseer
+light: !include lights.yaml
+
+# MQTT Z-Wave Door Locks setup in Homeseer
+lock: !include locks.yaml
+
+# MQTT Z-Wave notification devices (battery level) setup in Homeseer
+sensor: !include sensors.yaml
+
+#For Themes
+frontend:
+  themes: !include themes.yaml
