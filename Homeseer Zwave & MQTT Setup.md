@@ -55,7 +55,7 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 24 Name: Power Management Notification
 * Ref ID: 25 Name: System Notification
 
-## Node: 13 (Lights.yaml)
+## Node: 13 
 ### Manufacturer
 * Homeseer
 * WD100
@@ -63,17 +63,15 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 26 Name: Lighting Dining Room Light Switch Root
 #### Children
 * Ref ID: 27 Name: Dining Room Light Central Scene
-    * Subscribe:  
-    *CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light_Central_Scene/Control*  
     * Publish:  
     *CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light_Central_Scene*
-* Ref ID: 28 Name: Dining Room Light
+* Ref ID: 28 Name: Dining Room Light - lights.yaml  
     * Subscribe:  
     *CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light/Control*
     * Publish:  
     *CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light  
     
-## Node: 15 (Lights.yaml)
+## Node: 15 
 ### Manufacturer
 * Homeseer
 * WD100
@@ -84,7 +82,7 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Living_Room/Lighting/Living_Room_Fan_Light_Central_Scene*  
     *$$STATUS:*
-* Ref ID: 41 Name: Living Room Light
+* Ref ID: 41 Name: Living Room Light - lights.yaml  
     * Subscribe:  
     *CRUD-06/mcsMQTT/Livng_Room/Lighting/Living_Room_Light/Control*  
     * Publish:  
@@ -166,7 +164,7 @@ Homeseer Zwave & MQTT Setup
     *CRUD-06/mcsMQTT/Thermostat/HVAC/Cooling_Setpoint*  
     *$$STATUS:*
 
-## Node: 22 (Lights.yaml)
+## Node: 22 
 #### Manufacturer
 * Homeseer
 * WD100
@@ -177,7 +175,7 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom-Fan_Light_Central_Scene*  
     *$$STATUS:*
-* Ref ID: 562 Name: Master Bedroom Fan Light Switch
+* Ref ID: 562 Name: Master Bedroom Fan Light Switch - lights.yaml
     * Subcribe:  
     *CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch/Control*
     * Publish:  
@@ -211,12 +209,12 @@ Homeseer Zwave & MQTT Setup
     *$$STATUS:*  
 * Ref ID: 196 Name: Master Bath Closet Tamper Switch
 
-## Node 25 (MQTT_Switches.yaml)
+## Node 25 
 #### Manufacturer
 * Jasco
 * 14318 Switch
 #### Parent
-* Ref ID: 197 Name: Lighting Master Bathroom Closet Light
+* Ref ID: 197 Name: Lighting Master Bathroom Closet Light - MQTT_Switches.yaml
 * Subscribe:  
     *CRUD-06/mcsMQTT/Master_Bathroom/Lighting/Closet_Light/Control*
 * Publish:  
@@ -254,12 +252,12 @@ Homeseer Zwave & MQTT Setup
     *$$STATUS:* 
 * Ref ID: 205 Name: Back Door Sensor Tamper Switch
 
-## Node 28 (MQTT_Switches.yaml)
+## Node 28 
 ### Manufacturer
 * Jasco
 * 14318 Switch
 #### Parent
-* Ref ID: 206 Name: Lighting Garage Inside Garage Light
+* Ref ID: 206 Name: Lighting Garage Inside Garage Light - MQTT_Switches.yaml  
     * Subscribe:  
     *CRUD-06/mcsMQTT/Garage/Lighting/Inside_Garage_Light/Control*  
     * Publish:  
@@ -283,7 +281,7 @@ Homeseer Zwave & MQTT Setup
     *$$STATUS:* 
 * Ref ID: 211 Name: Laundry/Garage Door Sensor Tamper Switch
 
-## Node 31 (MQTT_Switches.yaml)
+## Node 31 
 ### Manufacturer
 * Homeseer
 * WS200
@@ -293,13 +291,13 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 546 Name: Kitchen Disposal Central Scene  
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Disposal_Central_Scene/Control*  
-* Ref ID: 547 Name: Kitchen Disposal  
+* Ref ID: 547 Name: Kitchen Disposal - MQTT_Switches.yaml
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Disposal/Control*  
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Disposal*  
     
-## Node 32 (MQTT_Switches.yaml)
+## Node 32 
 ### Manufacturer
 * Homeseer
 * WS200
@@ -309,35 +307,35 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 549 Name: Kitchen Dishwasher Power Central Scene  
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power_Central_Scene*  
-* Ref ID: 550 Name: Kitchen Dishwasher Power
+* Ref ID: 550 Name: Kitchen Dishwasher Power - MQTT_Switches.yaml  
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power/Control* 
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power*  
 
-## Node 33 (MQTT_Switches.yaml)
+## Node 33 
 ### Manufacturer
 * Jasco
 * 14318 Switch
 #### Parent
-* Ref ID: 53 Name: Lighting Entry Way Outside Entryway Light  
+* Ref ID: 53 Name: Lighting Entry Way Outside Entryway Light - MQTT_Switches.yaml  
     * Subscribe:  
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Outside_Entryway_Light/Control*  
     * Publish:  
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Outside_Entryway_Light*
 
-## Node 34 (MQTT_Switches.yaml)
+## Node 34 
 ### Manufacturer
 * Jasco
 * 14318 Switch
 #### Parent
-* Ref ID: 1075 Name: Lighting Garage Outside Garage Light
+* Ref ID: 1075 Name: Lighting Garage Outside Garage Light - MQTT_Switches.yaml
     * Subscribe:
     *CRUD-06/mcsMQTT/Garage/Lighting/Outside_Garage_Light/Control*  
     * Publish:  
     *CRUD-06/mcsMQTT/Garage/Lighting/Outside_Garage_Light*    
 
-## Node 35 (Lights.yaml)
+## Node 35 
 ### Manufacturer
 * Homeseer
 * WD200
@@ -348,13 +346,13 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2_Central_Scene*  
     *$$STATUS:*
-* Ref ID: 1080 Name: Kitchen Light 2
+* Ref ID: 1080 Name: Kitchen Light 2 - lights.yaml
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2/Control*  
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2*  
 
-## Node 36 (Lights.yaml)
+## Node 36 
 ### Manufacturer
 * Homeseer
 * WD200
@@ -365,13 +363,13 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_3_Central_Scene*  
     *$$STATUS:
-* Ref ID: 1083 Name: Kitchen Light 3
+* Ref ID: 1083 Name: Kitchen Light 3 - lights.yaml
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_3/Control*  
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_3*  
 
-## Node 37 (Lights.yaml)
+## Node 37 
 ### Manufacturer
 * Homeseer
 * WD200
@@ -382,13 +380,13 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_1_Central_Scene*  
     *$$STATUS:*
-* Ref ID: 1086 Name: Kitchen Light 1
+* Ref ID: 1086 Name: Kitchen Light 1 - lights.yaml
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_1/Control*  
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_1*  
     
-## Node 38 (MQTT_Switches.yaml)
+## Node 38 
 ### Manufacturer
 * Homeseer
 * WS200
@@ -398,7 +396,7 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 1088 Name: Inside Entryway Light Central Scene
     * Publish:  
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light_Central_Scene*  
-* Ref ID: 1089 Name: Inside Entryway Light
+* Ref ID: 1089 Name: Inside Entryway Light - MQTT_Switches.yaml
     * Subscribe:
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light/Control*  
     * Publish:
