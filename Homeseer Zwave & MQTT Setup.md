@@ -81,8 +81,6 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 39 Name: Lighting Living Room Living Room Fan Light Switch Root 
 #### Children
 * Ref ID: 40 Name: Living Room Fan Light Central Scene
-    * Subscribe:  
-    *CRUD-06/mcsMQTT/Living_Room/Lighting/Living_Room_Fan_Light_Central_Scene/Control*  
     * Publish:  
     *CRUD-06/mcsMQTT/Living_Room/Lighting/Living_Room_Fan_Light_Central_Scene*  
     *$$STATUS:*
