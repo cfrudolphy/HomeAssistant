@@ -218,9 +218,9 @@ Homeseer Zwave & MQTT Setup
 #### Parent
 * Ref ID: 197 Name: Lighting Master Bathroom Closet Light
 * Subscribe:  
-*CRUD-06/mcsMQTT/Master_Bathroom/Lighting/Closet_Light/Control*
+    *CRUD-06/mcsMQTT/Master_Bathroom/Lighting/Closet_Light/Control*
 * Publish:  
-*CRUD-06/mcsMQTT/Master_Bathroom/Lighting/Closet_Light*
+    *CRUD-06/mcsMQTT/Master_Bathroom/Lighting/Closet_Light*
 
 ## Node 26
 ### Manufacturer
