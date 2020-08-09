@@ -1,0 +1,15 @@
+  - platform: mqtt
+    name: "Back Door Lock Battery"
+    unique_id: "BackDoorLockBattery"
+    icon: mdi:battery
+    device_class: battery
+    unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Lock_Battery
+
+  - platform: mqtt
+    name: "Front Door Lock Battery"
+    unique_id: "FrontDoorLockBattery"
+    icon: mdi:battery
+    device_class: battery
+    unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Lock_Battery
