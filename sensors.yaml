@@ -1,3 +1,9 @@
+# sensors.yaml
+# This is a yaml file containing the setup of all my Z-Wave/MQTT device sensor devices
+
+# Back Door Lock Battery
+# Homeseer Node: 10
+# Ref ID: 07 Name: Back Door Lock Battery
   - platform: mqtt
     name: "Back Door Lock Battery"
     unique_id: "BackDoorLockBattery"
@@ -6,6 +12,9 @@
     unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Lock_Battery
 
+# Front Door Lock Battery
+# Homeseer Node: 12
+# Ref ID: 21 Name: Front Door Lock Battery
   - platform: mqtt
     name: "Front Door Lock Battery"
     unique_id: "FrontDoorLockBattery"
@@ -13,3 +22,47 @@
     device_class: battery
     unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Lock_Battery
+
+# Master Bath Closet Door Battery
+# Homeseer Node: 24
+# Ref ID: 194 Name: Master Bath Closet Door Battery
+  - platform: mqtt
+    name: "Master Bath Closet Door Battery"
+    unique_id: "MasterBathClosetDoorBattery"
+    icon: mdi:battery
+    device_class: battery
+    unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Master_Bathroom/Access_Control/Master_Bath_Closet_Door_Battery
+
+# Front Door Sensor Battery
+# Homeseer Node: 26
+# Ref ID: 199 Name: Front Door Sensor Battery
+  - platform: mqtt
+    name: "Front Door Sensor Battery"
+    unique_id: "FrontDoorSensorBattery"
+    icon: mdi:battery
+    device_class: battery
+    unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Sensor_Battery
+
+# Back Door Sensor Battery
+# Homeseer Node: 27
+# Ref ID: 203 Name: Back Door Sensor Battery
+  - platform: mqtt
+    name: "Back Door Sensor Battery"
+    unique_id: "BackDoorSensorBattery"
+    icon: mdi:battery
+    device_class: battery
+    unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Sensor_Battery
+
+# Laundry/Garage Door Sensor Battery
+# Homeseer Node: 30
+# Ref ID: 209 Name: Laundry/Garage Door Sensor Battery
+  - platform: mqtt
+    name: "Laundry-Garage Door SensorBattery"
+    unique_id: "Laundry-GarageDoorSensorBattery"
+    icon: mdi:battery
+    device_class: battery
+    unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Garage/Access_Control/Laundry-Garage_Door_Sensor_Battery
