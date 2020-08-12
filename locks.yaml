@@ -12,7 +12,8 @@
     state_topic: "CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Lock"
     payload_lock: "lock"
     payload_unlock: "unlock"
-    value_template: "{{value[:-2] | lower }}"
+    state_locked: "Locked"
+    state_unlocked: "Unlocked"
     qos: 1
     retain: false
     optimistic: false
@@ -25,6 +26,10 @@
     name: "Front Door Lock"
     command_topic: "CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Lock/Control"
     state_topic: "CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Lock"
-    payload_lock: "255"
-    payload_unlock: "0"
+    payload_lock: "lock"
+    payload_unlock: "unlock"
+    state_locked: "Locked"
+    state_unlocked: "Unlocked"
+    qos: 1
+    retain: false
     optimistic: false
