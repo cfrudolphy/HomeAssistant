@@ -400,4 +400,4 @@ Homeseer Zwave & MQTT Setup
     * Subscribe:
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light/Control*  
     * Publish:
-    *CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light*  
+    *CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light*ls
