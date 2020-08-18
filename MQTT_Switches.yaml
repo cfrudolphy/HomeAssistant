@@ -7,11 +7,12 @@
 
   - platform: mqtt
     name: "Master Closet Light"
-    payload_on: "255"
-    payload_off: "0"
+    payload_on: "on"
+    payload_off: "off"
     unique_id: "MasterClosetLight"
     state_topic: "CRUD-06/mcsMQTT/Master_Bathroom/Lighting/Closet_Light"
     command_topic: "CRUD-06/mcsMQTT/Master_Bathroom/Lighting/Closet_Light/Control"
+    value_template: "{{ 'on' if value|int > 0 else 'off' }}"
     optimistic: false
 
 # Master Garage Inside Light
@@ -20,11 +21,12 @@
 
   - platform: mqtt
     name: "Inside Garage Light"
-    payload_on: "255"
-    payload_off: "0"
+    payload_on: "on"
+    payload_off: "off"
     unique_id: "InsideGarageLight"
     state_topic: "CRUD-06/mcsMQTT/Garage/Lighting/Inside_Garage_Light"
     command_topic: "CRUD-06/mcsMQTT/Garage/Lighting/Inside_Garage_Light/Control"
+    value_template: "{{ 'on' if value|int > 0 else 'off' }}"
     optimistic: false
 
 # Kitchen Disposal Switch
@@ -33,11 +35,12 @@
 
   - platform: mqtt
     name: "Kitchen Disposal"
-    payload_on: "255"
-    payload_off: "0"
+    payload_on: "on"
+    payload_off: "off"
     unique_id: "KitchenDisposalSwitch"
     state_topic: "CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Disposal"
     command_topic: "CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Disposal/Control"
+    value_template: "{{ 'on' if value|int > 0 else 'off' }}"
     optimistic: false
 
 # Kitchen Dishwasher Switch
@@ -46,11 +49,12 @@
 
   - platform: mqtt
     name: "Kitchen Dishwasher"
-    payload_on: "255"
-    payload_off: "0"
+    payload_on: "on"
+    payload_off: "off"
     unique_id: "KitchenDishwasherSwitch"
     state_topic: "CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power"
     command_topic: "CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power/Control"
+    value_template: "{{ 'on' if value|int > 0 else 'off' }}"
     optimistic: false
 
 # Outside Entry Way Light Switch
@@ -59,11 +63,12 @@
 
   - platform: mqtt
     name: "Outside Entry Way Light"
-    payload_on: "255"
-    payload_off: "0"
+    payload_on: "on"
+    payload_off: "off"
     unique_id: "OutsideEntryWayLight"
     state_topic: "CRUD-06/mcsMQTT/Entry_Way/Lighting/Outside_Entryway_Light"
     command_topic: "CRUD-06/mcsMQTT/Entry_Way/Lighting/Outside_Entryway_Light/Control"
+    value_template: "{{ 'on' if value|int > 0 else 'off' }}"
     optimistic: false
 
 # Outside Garage Light Switch
@@ -72,11 +77,12 @@
 
   - platform: mqtt
     name: "Outside Garage Light"
-    payload_on: "255"
-    payload_off: "0"
+    payload_on: "on"
+    payload_off: "off"
     unique_id: "OutsideGarageLight"
     state_topic: "CRUD-06/mcsMQTT/Garage/Lighting/Outside_Garage_Light"
     command_topic: "CRUD-06/mcsMQTT/Garage/Lighting/Outside_Garage_Light/Control"
+    value_template: "{{ 'on' if value|int > 0 else 'off' }}"
     optimistic: false
 
 # Inside Entry Way Light
@@ -85,9 +91,10 @@
 
   - platform: mqtt
     name: "Inside Entry Way Light"
-    payload_on: "255"
-    payload_off: "0"
+    payload_on: "on"
+    payload_off: "off"
     unique_id: "InsideEntryWayLight"
     state_topic: "CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light"
     command_topic: "CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light/Control"
+    value_template: "{{ 'on' if value|int > 0 else 'off' }}"
     optimistic: false

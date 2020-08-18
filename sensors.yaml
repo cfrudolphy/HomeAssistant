@@ -34,6 +34,13 @@
     unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Master_Bathroom/Access_Control/Master_Bath_Closet_Door_Battery
 
+# Ref ID: 195 Name: Master Bath Closet Door Notification
+  - platform: mqtt
+    name: "Master Bath Closet Door State"
+    unique_id: "MasterBathClosetDoorState"
+    icon: mdi:door
+    state_topic: CRUD-06/mcsMQTT/Master_Bathroom/Access_Control/Master_Bath_Closet_Notification
+
 # Front Door Sensor Battery
 # Homeseer Node: 26
 # Ref ID: 199 Name: Front Door Sensor Battery
@@ -44,6 +51,13 @@
     device_class: battery
     unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Sensor_Battery
+
+# Ref ID: 200 Name: Front Door Sensor Notification
+  - platform: mqtt
+    name: "Front Door State"
+    unique_id: "FrontDoorState"
+    icon: mdi:door
+    state_topic: CRUD-06/mcsMQTT/Entry_Way/Access_Control/|Front_Door_Sensor_Notification
 
 # Back Door Sensor Battery
 # Homeseer Node: 27
@@ -56,6 +70,13 @@
     unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Sensor_Battery
 
+# Ref ID: 204195 Name: Back Door Sensor Notification
+  - platform: mqtt
+    name: "Back Door State"
+    unique_id: "BackDoorState"
+    icon: mdi:door
+    state_topic: CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Sensor_Notification
+
 # Laundry/Garage Door Sensor Battery
 # Homeseer Node: 30
 # Ref ID: 209 Name: Laundry/Garage Door Sensor Battery
@@ -66,3 +87,10 @@
     device_class: battery
     unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Garage/Access_Control/Laundry-Garage_Door_Sensor_Battery
+
+# Ref ID: 210 Name: Laundry/Garage Door Sensor Notification
+  - platform: mqtt
+    name: "Laundry-Garage Door State"
+    unique_id: "Laundry-GarageDoorState"
+    icon: mdi:door
+    state_topic: CRUD-06/mcsMQTT/Garage/Access_Control/Laundry-Garage_Door_Sensor_Notification
