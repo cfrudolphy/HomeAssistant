@@ -12,6 +12,17 @@
     unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Lock_Battery
 
+# Back Door Access Control Notification
+# Homeseer Node: 10
+# Ref ID: 09 Name: Back Door Access Control Notification
+  - platform: mqtt
+    name: "Back Door Access"
+    unique_id: "BackDoorLockAccess"
+#    icon: mdi:battery
+#    device_class: battery
+#    unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Access_Control_Notification
+
 # Front Door Lock Battery
 # Homeseer Node: 12
 # Ref ID: 21 Name: Front Door Lock Battery
@@ -22,6 +33,17 @@
     device_class: battery
     unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Lock_Battery
+
+# Front Door Lock Access Control Notification
+# Homeseer Node: 12
+# Ref ID: 23 Name: Front Door Lock Access Control Notification
+  - platform: mqtt
+    name: "Front Door Access"
+    unique_id: "FrontDoorLockAccess"
+#    icon: mdi:battery
+#    device_class: battery
+#    unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Lock_Access_Control_Notification
 
 # Master Bath Closet Door Battery
 # Homeseer Node: 24
