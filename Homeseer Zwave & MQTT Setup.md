@@ -15,10 +15,10 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 3 Name: Access Control Living Room Back Door Lock Root
 #### Children
 * Ref ID: 6 Name: Application Status
-* Ref ID: 7 Name: Back Door Lock Battery - sensors.yaml  
+* Ref ID: 7 Name: Back Door Lock Battery - ``` sensors.yaml ```  
     * Publish:  
         *CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Lock_Battery*  
-    * Ref ID: 8 Name: Back Door Lock - locks.yaml  
+    * Ref ID: 8 Name: Back Door Lock - ``` locks.yaml ```  
     * Subscribe:  
         *CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Lock/Control*
     *  Publish:  
@@ -39,10 +39,10 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 19 Name: Access Control Entry Way Front Door Lock Root
 #### Children
 * Ref ID: 20 Name: Application Status
-* Ref ID: 21 Name: Front Door Lock Battery - sensors.yaml 
+* Ref ID: 21 Name: Front Door Lock Battery - ``` sensors.yaml ``` 
     * Publish:  
     *CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Lock_Battery*   
-* Ref ID: 22 Name: Front Door Lock - locks.yaml
+* Ref ID: 22 Name: Front Door Lock - ``` locks.yaml ```
     * Subscribe:  
     *CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Lock/Control* 
     * Publish:  
@@ -65,7 +65,7 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 27 Name: Dining Room Light Central Scene
     * Publish:  
     *CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light_Central_Scene*
-* Ref ID: 28 Name: Dining Room Light - lights.yaml  
+* Ref ID: 28 Name: Dining Room Light - ``` lights.yaml ```  
     * Subscribe:  
     *CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light/Control*
     * Publish:  
@@ -82,7 +82,7 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Living_Room/Lighting/Living_Room_Fan_Light_Central_Scene*  
     *$$STATUS:*
-* Ref ID: 41 Name: Living Room Light - lights.yaml  
+* Ref ID: 41 Name: Living Room Light - ``` lights.yaml ```  
     * Subscribe:  
     *CRUD-06/mcsMQTT/Livng_Room/Lighting/Living_Room_Light/Control*  
     * Publish:  
@@ -175,7 +175,7 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom-Fan_Light_Central_Scene*  
     *$$STATUS:*
-* Ref ID: 562 Name: Master Bedroom Fan Light Switch - lights.yaml
+* Ref ID: 562 Name: Master Bedroom Fan Light Switch - ``` lights.yaml ```
     * Subcribe:  
     *CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch/Control*
     * Publish:  
@@ -200,10 +200,10 @@ Homeseer Zwave & MQTT Setup
 #### Parent
 * Ref ID: 193 Name: Access Control Master Bathroom Master Bath Closet Door Root
 #### Children
-* Ref ID: 194 Name: Master Bath Closet Door Battery  - sensors.yaml  
+* Ref ID: 194 Name: Master Bath Closet Door Battery  - ``` sensors.yaml ```  
     * Publish:  
     *CRUD-06/mcsMQTT/Master_Bathroom/Access_Control/Master_Bath_Closet_Door_Battery*  
-* Ref ID: 195 Name: Master Bath Closet Notification
+* Ref ID: 195 Name: Master Bath Closet Notification - ``` sensors.yaml ```
     * Publish:  
     *CRUD-06/mcsMQTT/Master_Bathroom/Access_Control/Master_Bath_Closet_Notification*  
     *$$STATUS:*  
@@ -214,7 +214,7 @@ Homeseer Zwave & MQTT Setup
 * Jasco
 * 14318 Switch
 #### Parent
-* Ref ID: 197 Name: Lighting Master Bathroom Closet Light - MQTT_Switches.yaml
+* Ref ID: 197 Name: Lighting Master Bathroom Closet Light - ``` MQTT_Switches.yaml ```
 * Subscribe:  
     *CRUD-06/mcsMQTT/Master_Bathroom/Lighting/Closet_Light/Control*
 * Publish:  
@@ -227,10 +227,10 @@ Homeseer Zwave & MQTT Setup
 #### Parent
 * Ref ID: 198 Name: Access Control Entry Way Front Door Sensor Root
 #### Children
-* Ref ID: 199 Name: Front Door Sensor Battery - sensors.yaml
+* Ref ID: 199 Name: Front Door Sensor Battery - ``` sensors.yaml ```
     * Publish:  
     *CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Sensor_Battery*  
-* Ref ID: 200 Name: Front Door Sensor Notification
+* Ref ID: 200 Name: Front Door Sensor Notification - ``` sensors.yaml ```
     * Publish:  
     *CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Sensor_Notification*  
     *$$STATUS:*   
@@ -243,12 +243,12 @@ Homeseer Zwave & MQTT Setup
 #### Parent
 * Ref ID: 202 Name: Access Control Living Room Back Door Sensor Root
 #### Children
-* Ref ID: 203 Name: Back Door Sensor Battery - sensors.yaml
+* Ref ID: 203 Name: Back Door Sensor Battery - ``` sensors.yaml ```
     * Publish:  
-    *CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch*  
-* Ref ID: 204 Name: Back Door Sensor Notification
+    *CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Sensor_Battery*  
+* Ref ID: 204 Name: Back Door Sensor Notification - ``` sensors.yaml ```
     * Publish:  
-    *CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch*  
+    *CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Sensor_Notification*  
     *$$STATUS:* 
 * Ref ID: 205 Name: Back Door Sensor Tamper Switch
 
@@ -257,7 +257,7 @@ Homeseer Zwave & MQTT Setup
 * Jasco
 * 14318 Switch
 #### Parent
-* Ref ID: 206 Name: Lighting Garage Inside Garage Light - MQTT_Switches.yaml  
+* Ref ID: 206 Name: Lighting Garage Inside Garage Light - ``` MQTT_Switches.yaml ```  
     * Subscribe:  
     *CRUD-06/mcsMQTT/Garage/Lighting/Inside_Garage_Light/Control*  
     * Publish:  
@@ -272,10 +272,10 @@ Homeseer Zwave & MQTT Setup
 #### Parent
 * Ref ID: 208 Name: Access Control Garage Laundry/Garage Door Sensor Root
 #### Children
-* Ref ID: 209 Name: Laundry/Garage Door Sensor Battery - sensors.yaml
+* Ref ID: 209 Name: Laundry/Garage Door Sensor Battery - ``` sensors.yaml ```
     * Publish:  
     *CRUD-06/mcsMQTT/Garage/Access_Control/Laundry-Garage_Door_Sensor_Battery*  
-* Ref ID: 210 Name: Laundry/Garage Door Sensor Notification  
+* Ref ID: 210 Name: Laundry/Garage Door Sensor Notification - ``` sensors.yaml ```   
     * Publish:  
     *CRUD-06/mcsMQTT/Garage/Access_Control/Laundry-Garage_Door_Sensor_Notification*  
     *$$STATUS:* 
@@ -291,7 +291,7 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 546 Name: Kitchen Disposal Central Scene  
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Disposal_Central_Scene/Control*  
-* Ref ID: 547 Name: Kitchen Disposal - MQTT_Switches.yaml
+* Ref ID: 547 Name: Kitchen Disposal - ``` MQTT_Switches.yaml ```
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Disposal/Control*  
     * Publish:  
@@ -307,7 +307,7 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 549 Name: Kitchen Dishwasher Power Central Scene  
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power_Central_Scene*  
-* Ref ID: 550 Name: Kitchen Dishwasher Power - MQTT_Switches.yaml  
+* Ref ID: 550 Name: Kitchen Dishwasher Power - ``` MQTT_Switches.yaml ```  
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power/Control* 
     * Publish:  
@@ -318,7 +318,7 @@ Homeseer Zwave & MQTT Setup
 * Jasco
 * 14318 Switch
 #### Parent
-* Ref ID: 53 Name: Lighting Entry Way Outside Entryway Light - MQTT_Switches.yaml  
+* Ref ID: 53 Name: Lighting Entry Way Outside Entryway Light - ``` MQTT_Switches.yaml ```  
     * Subscribe:  
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Outside_Entryway_Light/Control*  
     * Publish:  
@@ -329,7 +329,7 @@ Homeseer Zwave & MQTT Setup
 * Jasco
 * 14318 Switch
 #### Parent
-* Ref ID: 1075 Name: Lighting Garage Outside Garage Light - MQTT_Switches.yaml
+* Ref ID: 1075 Name: Lighting Garage Outside Garage Light - ``` MQTT_Switches.yaml ```
     * Subscribe:
     *CRUD-06/mcsMQTT/Garage/Lighting/Outside_Garage_Light/Control*  
     * Publish:  
@@ -346,7 +346,7 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2_Central_Scene*  
     *$$STATUS:*
-* Ref ID: 1080 Name: Kitchen Light 2 - lights.yaml
+* Ref ID: 1080 Name: Kitchen Light 2 - ``` lights.yaml ``` 
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2/Control*  
     * Publish:  
@@ -363,7 +363,7 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_3_Central_Scene*  
     *$$STATUS:
-* Ref ID: 1083 Name: Kitchen Light 3 - lights.yaml
+* Ref ID: 1083 Name: Kitchen Light 3 - ``` lights.yaml ```
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_3/Control*  
     * Publish:  
@@ -380,7 +380,7 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_1_Central_Scene*  
     *$$STATUS:*
-* Ref ID: 1086 Name: Kitchen Light 1 - lights.yaml
+* Ref ID: 1086 Name: Kitchen Light 1 - ``` lights.yaml ```
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_1/Control*  
     * Publish:  
@@ -396,7 +396,7 @@ Homeseer Zwave & MQTT Setup
 * Ref ID: 1088 Name: Inside Entryway Light Central Scene
     * Publish:  
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light_Central_Scene*  
-* Ref ID: 1089 Name: Inside Entryway Light - MQTT_Switches.yaml
+* Ref ID: 1089 Name: Inside Entryway Light - ``` MQTT_Switches.yaml ```
     * Subscribe:
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light/Control*  
     * Publish:
