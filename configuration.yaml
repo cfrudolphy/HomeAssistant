@@ -49,6 +49,9 @@ lock: !include locks.yaml
 # Notification devices (battery level) setup in Homeseer
 sensor: !include sensors.yaml
 
+# Ceiling Fans setup in Homeseer
+fan: !include fans.yaml
+
 #For Themes
 frontend:
   themes: !include themes.yaml

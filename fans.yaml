@@ -1,0 +1,27 @@
+# fans.yaml
+# This is a yaml file containing the setup of all my ceiling fans
+
+# Master Bedroom Fan
+# Homeseer Node: 23
+# Ref ID: 192 Name: Master Bedroom Fan
+
+  - platform: mqtt
+    name: "Master Bedroom Fan"
+    unique_id: "MasterBedroomFan"
+    state_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Fan_Control/Master_Bedroom_Fan"
+    command_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Fan_Control/Master_Bedroom_Fan/Control"
+    speed_state_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Fan_Control/Master_Bedroom_Fan"
+    speed_command_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Fan_Control/Master_Bedroom_Fan/Control"
+    payload_on: "on"
+    payload_off: "off"
+    state_value_template: "{{ 'on' if value|int > 0 else 'off' }}"
+    payload_low_speed: "Low"
+    payload_medium_speed: "Medium"
+    payload_high_speed: "High"
+    speeds:
+      - "off"
+      - "Low"
+      - "Medium"
+      - "High"
+    qos: 0
+    optimistic: false
