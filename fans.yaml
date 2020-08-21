@@ -12,14 +12,37 @@
     command_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Fan_Control/Master_Bedroom_Fan/Control"
     speed_state_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Fan_Control/Master_Bedroom_Fan"
     speed_command_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Fan_Control/Master_Bedroom_Fan/Control"
-    payload_on: "on"
-    payload_off: "off"
-    state_value_template: "{{ 'on' if value|int > 0 else 'off' }}"
+    payload_on: "Last"
+    payload_off: "Off"
     payload_low_speed: "Low"
     payload_medium_speed: "Medium"
     payload_high_speed: "High"
     speeds:
-      - "off"
+      - "Off"
+      - "Low"
+      - "Medium"
+      - "High"
+    qos: 0
+    optimistic: false
+
+# Living Room Fan
+# Homeseer Node: 16
+# Ref ID: 42 Name: Master Bedroom Fan
+
+  - platform: mqtt
+    name: "Living Room Fan"
+    unique_id: "LivingRoomFan"
+    state_topic: "CRUD-06/mcsMQTT/Living_Room/Fan_Control/Living_Room_Fan"
+    command_topic: "CRUD-06/mcsMQTT/Living_Room/Fan_Control/Living_Room_Fan/Control"
+    speed_state_topic: "CRUD-06/mcsMQTT/Living_Room/Fan_Control/Living_Room_Fan"
+    speed_command_topic: "CRUD-06/mcsMQTT/Living_Room/Fan_Control/Living_Room_Fan/Control"
+    payload_on: "Last"
+    payload_off: "Off"
+    payload_low_speed: "Low"
+    payload_medium_speed: "Medium"
+    payload_high_speed: "High"
+    speeds:
+      - "Off"
       - "Low"
       - "Medium"
       - "High"
