@@ -52,6 +52,9 @@ sensor: !include sensors.yaml
 # Ceiling Fans setup in Homeseer
 fan: !include fans.yaml
 
+# Garage Door setup in Homeseer
+cover: !include covers.yaml
+
 #For Themes
 frontend:
   themes: !include themes.yaml
