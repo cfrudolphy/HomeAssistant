@@ -1,0 +1,21 @@
+# covers.yaml
+# This is a yaml file containing the setup for my garage door
+
+# Garage Door Entry Control
+# Homeseer Node: 18
+# Ref ID: 50 Name: Dining Room Light
+
+  - platform: mqtt
+    name: "Garage Door"
+    unique_id: "GarageDoor"
+    state_topic: "CRUD-06/mcsMQTT/Garage/Access_Control/Garage_Door"
+    command_topic: "CRUD-06/mcsMQTT/Garage/Access_Control/Garage_Door/Control"
+    payload_open: "Open"
+    payload_close: "Close"
+#    payload_stop: 
+    position_open: 99
+    position_closed: 1
+    value_template: '{{ value.x }}'
+#   state_value_template: "{{ 'on' if value|int > 0 else 'off' }}"
+    qos: 0
+    optimistic: false
