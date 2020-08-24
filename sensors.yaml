@@ -79,7 +79,7 @@
     name: "Front Door State"
     unique_id: "FrontDoorState"
     icon: mdi:door
-    state_topic: CRUD-06/mcsMQTT/Entry_Way/Access_Control/|Front_Door_Sensor_Notification
+    state_topic: CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Sensor_Notification
 
 # Back Door Sensor Battery
 # Homeseer Node: 27
@@ -116,3 +116,47 @@
     unique_id: "Laundry-GarageDoorState"
     icon: mdi:door
     state_topic: CRUD-06/mcsMQTT/Garage/Access_Control/Laundry-Garage_Door_Sensor_Notification
+
+# Dining Room Light Central Scene
+# Homeseer Node: 13
+# Ref ID: 27 Name: Dining Room Light Central Scene
+  - platform: mqtt
+    name: "Dining Room Light Central Scene"
+    unique_id: "DiningRoomLightCentralScene"
+  #  icon: mdi:battery
+  #  device_class: battery
+  #  unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light_Central_Scene
+
+# Living Room Fan Light Central Scene
+# Homeseer Node: 15
+# Ref ID: 40 Name: Living Room Fan Light Central Scene
+  - platform: mqtt
+    name: "Living Room Fan Light Central Scene"
+    unique_id: "LivingRoomFanLightCentralScene"
+  #  icon: mdi:battery
+  #  device_class: battery
+  #  unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Living_Room/Lighting/Living_Room_Fan_Light_Central_Scene
+
+# Master Bedroom Fan Light Central Scene
+# Homeseer Node: 22
+# Ref ID: 190 Name: Master Bedroom Fan Light Central Scene
+  - platform: mqtt
+    name: "Master Bedroom Fan Light Central Scene"
+    unique_id: "MasterBedroomFanLightCentralScene"
+  #  icon: mdi:battery
+  #  device_class: battery
+  #  unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Central_Scene
+
+# Kitchen Light 2
+# Homeseer Node: 35
+# Ref ID: 1079 Name: Kitchen Light 2 Central Scene
+  - platform: mqtt
+    name: "Kitchen Light 2 Central Scene"
+    unique_id: "KitchenLight2CentralScene"
+  #  icon: mdi:battery
+  #  device_class: battery
+  #  unit_of_measurement: "%"
+    state_topic: CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2_Central_Scene
