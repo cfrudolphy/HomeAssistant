@@ -3,9 +3,11 @@ Homeseer Zwave & MQTT Setup
 
 ## Node: 1
 * Ref ID: 13 Name: Z-Wave Node 1 SmartStick+
+***
 
 ## Node: 8 
 * (NOT IN USE)
+***
 
 ## Node: 10 - COMPLETED
 ### Manufacturer
@@ -30,6 +32,7 @@ Homeseer Zwave & MQTT Setup
         *$$STATUS:*
 * Ref ID: 10 Name: Power Management Notification
 * Ref ID: 11 Name: System Notification
+***
 
 ## Node: 12 - COMPLETED
 ### Manufacturer
@@ -54,6 +57,7 @@ Homeseer Zwave & MQTT Setup
     *$$STATUS:*
 * Ref ID: 24 Name: Power Management Notification
 * Ref ID: 25 Name: System Notification
+***
 
 ## Node: 13 - COMPLETED
 ### Manufacturer
@@ -70,7 +74,8 @@ Homeseer Zwave & MQTT Setup
     * Subscribe:  
     *CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light/Control*
     * Publish:  
-    *CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light  
+    *CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light
+***  
     
 ## Node: 15 - COMPLETED
 ### Manufacturer
@@ -88,6 +93,7 @@ Homeseer Zwave & MQTT Setup
     *CRUD-06/mcsMQTT/Livng_Room/Lighting/Living_Room_Light/Control*  
     * Publish:  
     *CRUD-06/mcsMQTT/Living_Room/Lighting/Living_Room_Light*  
+***
 
 ## Node: 16 - COMPLETED
 ### Manufacturer
@@ -100,6 +106,7 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Living_Room/Fan_Control/Living_Room_Fan*  
     *$$STATUS:* 
+***
 
 ## Node: 18
 ### Manufacturer
@@ -117,9 +124,11 @@ Homeseer Zwave & MQTT Setup
     *$$STATUS:* 
 * Ref ID: 51 Name: Garage Door Access Control Notification
 * Ref ID: 52 Name: Garage Door Home Security
+***
 
 ## Node: 19
 * (PHANTOM)
+***
 
 ## Node: 21
 ### Manufacturer
@@ -164,6 +173,7 @@ Homeseer Zwave & MQTT Setup
     * Publish:   
     *CRUD-06/mcsMQTT/Thermostat/HVAC/Cooling_Setpoint*  
     *$$STATUS:*
+***
 
 ## Node: 22 - COMPLETED
 #### Manufacturer
@@ -180,7 +190,8 @@ Homeseer Zwave & MQTT Setup
     * Subcribe:  
     *CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch/Control*
     * Publish:  
-    *CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch*  
+    *CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch* 
+*** 
 
 ## Node 23 - COMPLETED
 ### Manufacturer
@@ -193,6 +204,7 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Master_Bedroom/Fan_Control/Master_Bedroom_Fan*  
     *$$STATUS:*
+***
 
 ## Node 24 - COMPLETED
 ### Manufacturer
@@ -208,7 +220,8 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Master_Bathroom/Access_Control/Master_Bath_Closet_Notification*  
     *$$STATUS:*  
-* Ref ID: 196 Name: Master Bath Closet Tamper Switch - **_not subscribed_**  
+* Ref ID: 196 Name: Master Bath Closet Tamper Switch - **_not subscribed_** 
+*** 
 
 ## Node 25 - COMPLETED
 #### Manufacturer
@@ -220,6 +233,7 @@ Homeseer Zwave & MQTT Setup
     *CRUD-06/mcsMQTT/Master_Bathroom/Lighting/Closet_Light/Control*
 * Publish:  
     *CRUD-06/mcsMQTT/Master_Bathroom/Lighting/Closet_Light*
+***
 
 ## Node 26 - COMPLETED
 ### Manufacturer
@@ -235,7 +249,8 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Sensor_Notification*  
     *$$STATUS:*   
-* Ref ID: 201 Name: Front Door Sensor Tamper Switch - **_not subscribed_**  
+* Ref ID: 201 Name: Front Door Sensor Tamper Switch - **_not subscribed_** 
+*** 
 
 ## Node 27 - COMPLETED
 ### Manufacturer
@@ -252,6 +267,7 @@ Homeseer Zwave & MQTT Setup
     *CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Sensor_Notification*  
     *$$STATUS:* 
 * Ref ID: 205 Name: Back Door Sensor Tamper Switch - **_not subscribed_**
+***
 
 ## Node 28 - COMPLETED
 ### Manufacturer
@@ -263,8 +279,10 @@ Homeseer Zwave & MQTT Setup
     *CRUD-06/mcsMQTT/Garage/Lighting/Inside_Garage_Light/Control*  
     * Publish:  
     *CRUD-06/mcsMQTT/Garage/Lighting/Inside_Garage_Light
+***
     
 ## Node 29 (Phantom)
+***
 
 ## Node 30 - COMPLETED
 ### Manufacturer
@@ -280,7 +298,8 @@ Homeseer Zwave & MQTT Setup
     * Publish:  
     *CRUD-06/mcsMQTT/Garage/Access_Control/Laundry-Garage_Door_Sensor_Notification*  
     *$$STATUS:* 
-* Ref ID: 211 Name: Laundry/Garage Door Sensor Tamper Switch - **_not subscribed_**  
+* Ref ID: 211 Name: Laundry/Garage Door Sensor Tamper Switch - **_not subscribed_**
+***  
 
 ## Node 31 - COMPLETED
 ### Manufacturer
@@ -296,7 +315,8 @@ Homeseer Zwave & MQTT Setup
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Disposal/Control*  
     * Publish:  
-    *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Disposal*  
+    *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Disposal* 
+*** 
     
 ## Node 32 - COMPLETED
 ### Manufacturer
@@ -312,7 +332,8 @@ Homeseer Zwave & MQTT Setup
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power/Control* 
     * Publish:  
-    *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power*  
+    *CRUD-06/mcsMQTT/Kitchen/Appliance/Kitchen_Dishwasher_Power* 
+*** 
 
 ## Node 33 - COMPLETED
 ### Manufacturer
@@ -324,6 +345,7 @@ Homeseer Zwave & MQTT Setup
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Outside_Entryway_Light/Control*  
     * Publish:  
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Outside_Entryway_Light*
+***
 
 ## Node 34 - COMPLETED
 ### Manufacturer
@@ -334,7 +356,8 @@ Homeseer Zwave & MQTT Setup
     * Subscribe:
     *CRUD-06/mcsMQTT/Garage/Lighting/Outside_Garage_Light/Control*  
     * Publish:  
-    *CRUD-06/mcsMQTT/Garage/Lighting/Outside_Garage_Light*    
+    *CRUD-06/mcsMQTT/Garage/Lighting/Outside_Garage_Light* 
+***   
 
 ## Node 35 - COMPLETED
 ### Manufacturer
@@ -351,7 +374,8 @@ Homeseer Zwave & MQTT Setup
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2/Control*  
     * Publish:  
-    *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2*  
+    *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2* 
+*** 
 
 ## Node 36 - COMPLETED
 ### Manufacturer
@@ -367,7 +391,8 @@ Homeseer Zwave & MQTT Setup
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_3/Control*  
     * Publish:  
-    *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_3*  
+    *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_3* 
+*** 
 
 ## Node 37 - COMPLETED
 ### Manufacturer
@@ -383,7 +408,8 @@ Homeseer Zwave & MQTT Setup
     * Subscribe:  
     *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_1/Control*  
     * Publish:  
-    *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_1*  
+    *CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_1*
+***  
     
 ## Node 38 - COMPLETED
 ### Manufacturer
@@ -399,4 +425,5 @@ Homeseer Zwave & MQTT Setup
     * Subscribe:
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light/Control*  
     * Publish:
-    *CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light*ls
+    *CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light*  
+***
