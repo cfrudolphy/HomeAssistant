@@ -13,8 +13,12 @@
     payload_open: "Open"
     payload_close: "Close"
 #    payload_stop: 
-    position_open: 99
-    position_closed: 1
+#    position_open: 99
+#    position_closed: 1
+    state_open: "Open"
+    state_opening: "Opening"
+    state_closed: "Closed"
+    state_closing: "Closing"
     value_template: '{{ value.x }}'
 #   state_value_template: "{{ 'on' if value|int > 0 else 'off' }}"
     qos: 0
