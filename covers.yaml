@@ -21,6 +21,10 @@
     state_opening: "opening"
     state_closed: "closed"
     state_closing: "closing"
-    state_icons: "open":"mdi:garage-open-variant" "closed":"mdi:garage-variant" "opening":"mdi:garage-alert-variant" "closing":"mdi:garage-alert-variant"
+    state_icons:
+      "open": "mdi:garage-open-variant"
+      "closed": "mdi:garage-variant" 
+      "opening": "mdi:garage-alert-variant" 
+      "closing": "mdi:garage-alert-variant"
     qos: 0
     optimistic: false
