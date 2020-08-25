@@ -8,20 +8,17 @@
   - platform: mqtt
     name: "Garage Door"
     unique_id: "GarageDoor"
-#    state_topic: "CRUD-06/mcsMQTT/Garage/Access_Control/Garage_Door"
-    position_topic: "CRUD-06/mcsMQTT/Garage/Access_Control/Garage_Door"
+    state_topic: "CRUD-06/mcsMQTT/Garage/Access_Control/Garage_Door"
+#    position_topic: "CRUD-06/mcsMQTT/Garage/Access_Control/Garage_Door"
     command_topic: "CRUD-06/mcsMQTT/Garage/Access_Control/Garage_Door/Control"
-    payload_open: "Open"
-    payload_close: "Close"
+    payload_open: "open"
+    payload_close: "close"
 #    payload_stop: 
-    position_open: 255
-    position_closed: 0
-#    state_open: "Open"
-#    state_opening: "Opening"
-#    state_closed: "Closed"
-#    state_closing: "Closing"
-#    value_template: '{{ value.x }}'
-#    state_value_template: "{{ 'on' if value|int > 0 else 'off' }}"
-    value_template: '{{ value.x }}'
+#    position_open: 255
+#    position_closed: 0
+    state_open: "open"
+    state_opening: "opening"
+    state_closed: "closed"
+    state_closing: "closing"
     qos: 0
     optimistic: false
