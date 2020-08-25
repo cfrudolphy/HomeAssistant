@@ -18,9 +18,6 @@
   - platform: mqtt
     name: "Back Door Access"
     unique_id: "BackDoorLockAccess"
-#    icon: mdi:battery
-#    device_class: battery
-#    unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Living_Room/Access_Control/Back_Door_Access_Control_Notification
 
 # Front Door Lock Battery
@@ -40,9 +37,6 @@
   - platform: mqtt
     name: "Front Door Access"
     unique_id: "FrontDoorLockAccess"
-#    icon: mdi:battery
-#    device_class: battery
-#    unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Lock_Access_Control_Notification
 
 # Master Bath Closet Door Battery
@@ -123,9 +117,6 @@
   - platform: mqtt
     name: "Dining Room Light Central Scene"
     unique_id: "DiningRoomLightCentralScene"
-  #  icon: mdi:battery
-  #  device_class: battery
-  #  unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Dining_Room/Lighting/Dining_Room_Light_Central_Scene
 
 # Living Room Fan Light Central Scene
@@ -134,9 +125,6 @@
   - platform: mqtt
     name: "Living Room Fan Light Central Scene"
     unique_id: "LivingRoomFanLightCentralScene"
-  #  icon: mdi:battery
-  #  device_class: battery
-  #  unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Living_Room/Lighting/Living_Room_Fan_Light_Central_Scene
 
 # Master Bedroom Fan Light Central Scene
@@ -145,9 +133,6 @@
   - platform: mqtt
     name: "Master Bedroom Fan Light Central Scene"
     unique_id: "MasterBedroomFanLightCentralScene"
-  #  icon: mdi:battery
-  #  device_class: battery
-  #  unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Central_Scene
 
 # Kitchen Light 2
@@ -156,7 +141,4 @@
   - platform: mqtt
     name: "Kitchen Light 2 Central Scene"
     unique_id: "KitchenLight2CentralScene"
-  #  icon: mdi:battery
-  #  device_class: battery
-  #  unit_of_measurement: "%"
     state_topic: CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2_Central_Scene
