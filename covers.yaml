@@ -3,7 +3,7 @@
 
 # Garage Door Entry Control
 # Homeseer Node: 18
-# Ref ID: 50 Name: Dining Room Light
+# Ref ID: 50 Name: Garage Door
 
   - platform: mqtt
     name: "Garage Door"
