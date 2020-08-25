@@ -14,8 +14,8 @@
     payload_open: "Open"
     payload_close: "Close"
 #    payload_stop: 
-    position_open: 99
-    position_closed: 1
+    position_open: 255
+    position_closed: 0
 #    state_open: "Open"
 #    state_opening: "Opening"
 #    state_closed: "Closed"
