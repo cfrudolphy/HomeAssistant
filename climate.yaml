@@ -1,0 +1,33 @@
+# climate.yaml
+# This is a yaml file containing the setup for my thermostat
+
+# Thermostat
+# Homeseer Node: 21
+# Ref ID: 62 Name: Cooling Set Point
+# Ref ID: 57 Name: Fan Mode
+# Ref ID: 58 Name: Fan State
+# Ref ID: 61 Name: Heating Set Point
+# Ref ID: 59 Name: Mode
+# Ref ID: 60 Name: Operating State
+# Ref ID: 56 Name: Temperature
+
+- platform: mqtt
+  name: "Thermostat"
+  unique_id: "Thermostat"
+  fan_mode_command_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Fan_Mode/Control"
+  fan_modes:
+    - "Auto"
+    - "On"
+    - "Circulation"
+  fan_mode_state_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Fan_State"
+  mode_command_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Mode/Control"
+  modes:
+    - "Off"
+    - "Heat"
+    - "Cool"
+    - "Auto"
+    - "Aux or Emergency Heat"
+  mode_state_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Operating_State"
+  current_temperature_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Temperature"
+  temperature_unit: F
+  

@@ -55,6 +55,9 @@ fan: !include fans.yaml
 # Garage Door setup in Homeseer
 cover: !include covers.yaml
 
+# Thermostat setup in Homeseer
+climate: !include climate.yaml
+
 #For Themes
 frontend:
   themes: !include themes.yaml
