@@ -17,6 +17,5 @@
     state_opening: "opening"
     state_closed: "closed"
     state_closing: "closing"
-    value_template: '{{ value.status }}'
     qos: 0
     optimistic: false
