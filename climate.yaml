@@ -32,5 +32,8 @@
   temperature_low_command_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Cooling_Setpoint/Control"
   temperature_low_state_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Cooling_Setpoint"
   current_temperature_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Temperature"
-  temperature_unit: F
+  temperature_unit: "F"
+  precision: 1.0
+  max_temp: 90
+  min_temp: 60
   
