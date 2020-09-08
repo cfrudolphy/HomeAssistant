@@ -19,15 +19,18 @@
     - "auto"
     - "on"
     - "circulation"
-  fan_mode_state_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Fan_State"
+  fan_mode_state_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Fan_Mode"
   mode_command_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Mode/Control"
   modes:
     - "off"
     - "heat"
     - "cool"
     - "auto"
-    - "aux or emergency heat"
-  mode_state_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Operating_State"
+  mode_state_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Mode"
+  temperature_high_command_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Heating_Setpoint/Control"
+  temperature_high_state_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Heating_Setpoint"
+  temperature_low_command_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Cooling_Setpoint/Control"
+  temperature_low_state_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Cooling_Setpoint"
   current_temperature_topic: "CRUD-06/mcsMQTT/Thermostat/HVAC/Temperature"
   temperature_unit: F
   
