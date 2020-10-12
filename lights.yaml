@@ -113,7 +113,7 @@
 #Light Groups
 
 #Kitchen Light Group
-  - platform: Group
+  - platform: group
     name: "Kitchen Lights"
     entities:
       - light.kitchen_light_1
