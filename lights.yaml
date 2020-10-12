@@ -109,3 +109,13 @@
     state_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch"
     command_topic: "CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Switch/Control"
     optimistic: false
+
+#Light Groups
+
+#Kitchen Light Group
+  - platform: Group
+    name: "Kitchen Lights"
+    entities:
+      - light.kitchen_light_1
+      - light.kitchen_light_2
+      - light.kitchen_light_3
