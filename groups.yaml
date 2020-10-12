@@ -23,3 +23,6 @@
       - light.living_room_lights
       - light.master_bedroom_lights
       - light.office_lamps
+      - switch.inside_entry_way_light
+      - switch.inside_garage_light
+      - switch.master_closet_light
