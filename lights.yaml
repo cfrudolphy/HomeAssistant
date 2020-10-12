@@ -120,9 +120,34 @@
       - light.kitchen_light_2
       - light.kitchen_light_3
 
-#Outside Light Group
+#Living Room Light Group
   - platform: group
-    name: "Outside Lights"
+    name: "Living Room Lights"
     entities:
-      - switch.outside_entry_way_light
-      - switch.outside_garage_light
+      - light.living_room_lamp
+      - light.living_room_fan_light
+      - light.hue_iris_1
+
+#Master Bedroom Light Group
+  - platform: group
+    name: "Master Bedroom Lights"
+    entities:
+      - light.chuck_bed_lamp
+      - light.chris_bed_lamp
+      - light.master_bedroom_fan_light
+
+#Master Bedroom Bed Lamp Group
+  - platform: group
+    name: "Bed Lamps"
+    entities:
+      - light.chuck_bed_lamp
+      - light.chris_bed_lamp
+
+#Office Light Group
+  - platform: group
+    name: "Office Lamps"
+    entities:
+      - light.chuck_desk_lamp
+      - light.chris_desk_lamp
+
+
