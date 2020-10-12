@@ -1,0 +1,25 @@
+# groups.yaml
+# This is a yaml file containing the setup of all my non "light.group" groups
+
+#Outside Light Group
+  outside_lights:
+    name: "Outside Lights"
+    entities:
+      - switch.outside_entry_way_light
+      - switch.outside_garage_light
+
+#Entryway Light Group
+  entryway_lights:
+    name: "Entryway Lights"
+    entities:
+      - switch.inside_entry_way_light
+      - switch.outside_entry_way_light
+
+#All Inside Light Group
+  all_inside_lights:
+    name: "All Inside Lights"
+    entities:
+      - light.kitchen_lights
+      - light.living_room_lights
+      - light.master_bedroom_lights
+      - light.office_lamps
