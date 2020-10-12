@@ -24,6 +24,7 @@
 
   - platform: mqtt
     name: "Front Door Lock"
+    unique_id: "FrontDoorLock"
     command_topic: "CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Lock/Control"
     state_topic: "CRUD-06/mcsMQTT/Entry_Way/Access_Control/Front_Door_Lock"
     payload_lock: "lock"
