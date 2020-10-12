@@ -119,3 +119,10 @@
       - light.kitchen_light_1
       - light.kitchen_light_2
       - light.kitchen_light_3
+
+#Outside Light Group
+  - platform: group
+    name: "Outside Lights"
+    entities:
+      - switch.outside_entry_way_light
+      - switch.outside_garage_light
