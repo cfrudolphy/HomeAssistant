@@ -33,3 +33,4 @@
     entities:
       - lock.back_door_lock
       - lock.front_door_lock
+    all: true
