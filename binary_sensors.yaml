@@ -1,7 +1,7 @@
 # binary_sensors.yaml
 # This is a yaml file containing the setup binary sensor devices
 
-  - platform:
+  - platform: tod
     name: Late Night
     after: 23:00:00
     before: sunrise
