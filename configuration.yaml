@@ -58,6 +58,9 @@ cover: !include covers.yaml
 # Thermostat setup in Homeseer
 climate: !include climate.yaml
 
+# Binary Sensors for Time Ranges intitially
+binary_sensor: !include binary_sensor.yaml
+
 #For Themes
 frontend:
   themes: !include themes.yaml
