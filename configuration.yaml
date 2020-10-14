@@ -59,7 +59,7 @@ cover: !include covers.yaml
 climate: !include climate.yaml
 
 # Binary Sensors for Time Ranges intitially
-binary_sensor: !include binary_sensor.yaml
+binary_sensor: !include binary_sensors.yaml
 
 #For Themes
 frontend:
