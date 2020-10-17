@@ -10,3 +10,13 @@
     name: Early Night
     after: sunset
     before: '22:59:59'
+
+  - platform: tod
+    name: Day
+    after: '05:00:00'
+    before: '21:00:00'
+
+  - platform: tod
+    name: Night
+    after: '21:00:00'
+    before: '04:59:59'
