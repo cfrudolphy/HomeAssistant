@@ -108,7 +108,7 @@
     payload_on: "on"
     payload_off: "off"
     unique_id: "EntryWayReceptacle"
-    state_topic: "CRUD-06/mcsMQTT/Entry_Way/Power_Recepticle/Entryway_Receptacle"
-    command_topic: "CRUD-06/mcsMQTT/Entry_Way/Power_Recepticle/Entryway_Receptacle/Control"
+    state_topic: "CRUD-06/mcsMQTT/Entry_Way/Power_Receptacle/Entryway_Receptacle"
+    command_topic: "CRUD-06/mcsMQTT/Entry_Way/Power_Receptacle/Entryway_Receptacle/Control"
     value_template: "{{ 'on' if value|int > 0 else 'off' }}"
     optimistic: false
