@@ -110,5 +110,4 @@
     unique_id: "EntryWayReceptacle"
     state_topic: "CRUD-06/mcsMQTT/Entry_Way/Power_Receptacles/Entryway_Receptacle"
     command_topic: "CRUD-06/mcsMQTT/Entry_Way/Power_Receptacles/Entryway_Receptacle/Control"
-    value_template: "{{ 'on' if value|int > 0 else 'off' }}"
     optimistic: false
