@@ -98,3 +98,17 @@
     command_topic: "CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light/Control"
     value_template: "{{ 'on' if value|int > 0 else 'off' }}"
     optimistic: false
+
+# Entry Way Power Receptacle
+# Homeseer Node: 39
+# Ref ID: 1105 Name: Entryway Receptacle
+
+  - platform: mqtt
+    name: "Entry Way Receptacle"
+    payload_on: "on"
+    payload_off: "off"
+    unique_id: "EntryWayReceptacle"
+    state_topic: "CRUD-06/mcsMQTT/Entry_Way/Power_Recepticle/Entryway_Receptacle"
+    command_topic: "CRUD-06/mcsMQTT/Entry_Way/Power_Recepticle/Entryway_Receptacle/Control"
+    value_template: "{{ 'on' if value|int > 0 else 'off' }}"
+    optimistic: false
