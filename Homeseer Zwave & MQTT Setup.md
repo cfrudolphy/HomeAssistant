@@ -427,3 +427,15 @@ Homeseer Zwave & MQTT Setup
     * Publish:
     *CRUD-06/mcsMQTT/Entry_Way/Lighting/Inside_Entryway_Light*  
 ***
+
+## Node 39 - COMPLETED
+### Manufacturer
+* Honeywell
+* ZW1002
+#### Parent
+* Ref ID: 1105 Name: Entry Way Power Receptacles Entryway Receptacle - **_switches.yaml_**
+  * Subscribe:
+  *CRUD-06/mcsMQTT/Entry_Way/Power_Receptacles/Entryway_Receptacle/Control*  
+  * Publish:  
+  *CRUD-06/mcsMQTT/Entry_Way/Power_Receptacles/Entryway_Receptacle* 
+***
