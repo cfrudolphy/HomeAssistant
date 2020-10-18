@@ -1,0 +1,345 @@
+- id: '1594143280224'
+  alias: Test_Notify
+  description: Test to check notify.Gmail service
+  trigger:
+  - device_id: 63e26054ae894dff960e306c2e0b6879
+    domain: light
+    entity_id: light.chuck_desk_lamp
+    platform: device
+    type: turned_off
+  condition: []
+  action:
+  - data:
+      message: Chuck Desk Lamp just turned off
+      title: DESK LAMP OFF
+    service: notify.gmail
+- id: '1595361867280'
+  alias: Test Notify - Phone
+  description: Notification in Phone App
+  trigger:
+  - device_id: 63e26054ae894dff960e306c2e0b6879
+    domain: light
+    entity_id: light.chuck_desk_lamp
+    platform: device
+    type: turned_on
+  condition: []
+  action:
+  - data:
+      message: Chuck Desk Lamp just turned on
+      title: DESK LAMP ON
+    service: notify.mobile_app_sm_a102u
+- id: '1602544616413'
+  alias: Outside lights on at twilight
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    below: '-4.0'
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data: {}
+    entity_id: group.outside_lights
+  mode: single
+- id: '1602619288268'
+  alias: Outside Lights after 11:00pm
+  description: Turn the Outside Lights (Entryway & Garage) off at 11:00pm
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: group.outside_lights
+  mode: single
+- id: '1602619565916'
+  alias: Chuck Bedlamp on at 5:30am
+  description: Turn Chuck's Bedlamp on at 5:30am every morning
+  trigger:
+  - platform: time
+    at: 05:30:00
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data:
+      brightness_pct: 20
+    entity_id: light.chuck_bed_lamp
+  mode: single
+- id: '1602619749996'
+  alias: Bedlamps on @7:30am
+  description: Turn both Bedlamps (Chuck & Chris) at 7:30am every day
+  trigger:
+  - platform: time
+    at: 07:30:00
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data:
+      brightness_pct: 100
+    entity_id: light.bed_lamps
+  mode: single
+- id: '1602622036217'
+  alias: Lock all Door Locks @ 11pm
+  description: Lock all Door Locks @ 11pm every day
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition: []
+  action:
+  - service: lock.lock
+    data: {}
+    entity_id: lock.back_door_lock
+  - service: lock.lock
+    data: {}
+    entity_id: lock.front_door_lock
+  mode: single
+- id: '1602623060538'
+  alias: All Kitchen Lights On via Key Press
+  description: Kitchen Light 2 Switch pressed 2 times to turn on all lights 100%
+  trigger:
+  - platform: mqtt
+    topic: CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2_Central_Scene
+    payload: '1003'
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data:
+      brightness_pct: 100
+    entity_id: light.kitchen_lights
+  mode: single
+- id: '1602625902179'
+  alias: All Kitchen Lights Off via Keypress
+  description: Turn All Kitchen Lights off when Kitchen Light 2 is pressed off 2 times
+  trigger:
+  - platform: mqtt
+    topic: CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2_Central_Scene
+    payload: '2003'
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: light.kitchen_lights
+  mode: single
+- id: '1602626586824'
+  alias: Master Bathroom Closet Light On
+  description: When Closet Door Opens Turn Closet Light On
+  trigger:
+  - platform: mqtt
+    topic: CRUD-06/mcsMQTT/Master_Bathroom/Access_Control/Master_Bath_Closet_Notification
+    payload: Open
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data: {}
+    entity_id: switch.master_closet_light
+  mode: single
+- id: '1602626948325'
+  alias: Master Bathroom Closet Light Off
+  description: Turn the Master Bathroom Closet Light Off after 10 minutes
+  trigger:
+  - platform: state
+    entity_id: switch.master_closet_light
+    to: 'on'
+    for: 00:10:00
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.master_closet_light
+  mode: single
+- id: '1602695341446'
+  alias: Inside Garage Light On by Door Opening
+  description: Turn the Inside Garage Light on because either door was open
+  trigger:
+  - platform: mqtt
+    topic: CRUD-06/mcsMQTT/Garage/Access_Control/Garage_Door
+    payload: Open
+  - platform: mqtt
+    topic: CRUD-06/mcsMQTT/Garage/Access_Control/Laundry-Garage_Door_Sensor_Notification
+    payload: Open
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data: {}
+    entity_id: switch.inside_garage_light
+  mode: single
+- id: '1602710240457'
+  alias: Inside Garage Light Off with Delay
+  description: Turn Inside Garage Light Off after 5 minutes when both doors are closed.
+  trigger:
+  - platform: mqtt
+    topic: CRUD-06/mcsMQTT/Garage/Access_Control/Garage_Door
+    payload: closed
+  - platform: mqtt
+    topic: CRUD-06/mcsMQTT/Garage/Access_Control/Laundry-Garage_Door_Sensor_Notification
+    payload: Closed
+  condition:
+  - condition: state
+    entity_id: sensor.laundry_garage_door_state
+    state: Closed
+  - condition: state
+    entity_id: cover.garage_door
+    state: closed
+  - condition: state
+    entity_id: switch.inside_garage_light
+    state: 'on'
+  - condition: state
+    entity_id: input_boolean.garage_occupied
+    state: 'off'
+  action:
+  - delay: 00:05:00
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.inside_garage_light
+  mode: single
+- id: '1602716702038'
+  alias: Chuck Bedlamp On by Keypress
+  description: Turn Chuck's Bedlamp on to 50% by double tap up on wall switch
+  trigger:
+  - platform: mqtt
+    topic: CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Central_Scene
+    payload: '1003'
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data:
+      brightness_pct: 50
+    entity_id: light.chuck_bed_lamp
+  mode: single
+- id: '1602716856686'
+  alias: Chris Bedlamp on by Keypress
+  description: Turn Chis's Bedlamp on to 50% by triple tap up on wall switch
+  trigger:
+  - platform: mqtt
+    topic: CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Central_Scene
+    payload: '1004'
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data:
+      brightness_pct: 50
+    entity_id: light.chris_bed_lamp
+  mode: single
+- id: '1602716990552'
+  alias: Master Bedlamps on by Keypress
+  description: Turn on the Master Bedroom Bedlamps to 100% by double tap down on wall
+    switch
+  trigger:
+  - platform: mqtt
+    topic: CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Central_Scene
+    payload: '2003'
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data:
+      brightness_pct: 100
+    entity_id: light.bed_lamps
+  mode: single
+- id: '1602717181785'
+  alias: Master Bedlamps off by Keypress
+  description: Turn all Master Bedlamps off with triple tap down on wall switch
+  trigger:
+  - platform: mqtt
+    topic: CRUD-06/mcsMQTT/Master_Bedroom/Lighting/Master_Bedroom_Fan_Light_Central_Scene
+    payload: '2004'
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: light.bed_lamps
+  mode: single
+- id: '1602873413692'
+  alias: House Occupied
+  description: Changes the status of input boolean House Occupied 286ats_location
+    group is here.
+  trigger:
+  - platform: state
+    entity_id: group.286ats_location_group
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data: {}
+    entity_id: input_boolean.house_occupied
+  - service: mqtt.publish
+    data:
+      topic: CRUD-06/mcsMQTT/Occupancy/Virtual/Occupancy/Control
+      payload: '100'
+  mode: single
+- id: '1602878311010'
+  alias: House Un-occupied
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.286ats_location_group
+    to: 'off'
+    from: 'on'
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: input_boolean.house_occupied
+  - service: mqtt.publish
+    data:
+      topic: CRUD-06/mcsMQTT/Occupancy/Virtual/Occupancy/Control
+      payload: '0'
+  mode: single
+- id: '1602974812430'
+  alias: Turn Entryway Receptacle On
+  description: Holiday - Turn Entryway Receptacle On Early Evening
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.early_night
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.entry_way_receptacle
+  mode: single
+- id: '1602974928482'
+  alias: Turn Entryway Recepticle Off
+  description: Holidays - Turn Entryway Receptacle off at end of Early Night
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.early_night
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.entry_way_receptacle
+  mode: single
+- id: '1603048533629'
+  alias: Set Scene Day
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.day
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.house_occupied
+    state: 'on'
+  action:
+  - scene: scene.day
+  mode: single
+- id: '1603049334521'
+  alias: Set Scene Night
+  description: Sets the night scene
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.night
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.house_occupied
+    state: 'on'
+  action:
+  - scene: scene.day
+  mode: single
