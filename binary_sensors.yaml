@@ -14,9 +14,19 @@
   - platform: tod
     name: Day
     after: '05:00:00'
-    before: '21:00:00'
+    before: '20:59:59'
 
   - platform: tod
     name: Night
     after: '21:00:00'
     before: '04:59:59'
+
+  - platform: tod
+    name: Morning
+    after: '05:00:00'
+    before: '11:59:59'
+
+  - platform: tod
+    name: Afternoon
+    after: '12:00:00'
+    before: sunset

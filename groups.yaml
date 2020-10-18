@@ -34,3 +34,22 @@
       - lock.back_door_lock
       - lock.front_door_lock
     all: true
+
+#286ATS Location Group
+  286ats_location_group:
+    name: "286ATS Location Group"
+    entities:
+      - device_tracker.life360_abita
+      - device_tracker.life360_emily
+      - device_tracker.life360_olga
+      - device_tracker.life360_patty_r_millspaugh
+      - device_tracker.pixel_4a
+      - device_tracker.sm_g960u
+
+#Chuck & Chris Location Group
+  Chuck&Chris_location_group:
+    name: "Chuck & Chris Location Group"
+    entities:
+      - device_tracker.pixel_4a
+      - device_tracker.sm_g960u
+
