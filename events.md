@@ -6,6 +6,8 @@ Occupancy
     Olga
     Chris
     Chuck
+    Emily
+    Patty
   Triggers
     Occupied - If any one of the above entities in the group become home
     Un-Occupied - If all of the above entites in the group are not home
@@ -15,7 +17,8 @@ Occupancy
       Send MQTT message to Homeseer to turn Virtual Occupancy Device on
     Un-Occupied:
       switch Occupied off
-      Send MQTT message to Homeseer to trun Virtual Occupancy Device off
+      Send MQTT message to Homeseer to tur
+      ton Virtual Occupancy Device off
   Notes:
     The status of Occupied will control lights, door locks, and thermostat
 
