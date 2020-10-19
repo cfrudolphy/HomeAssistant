@@ -69,3 +69,6 @@ binary_sensor: !include binary_sensors.yaml
 #For Themes
 frontend:
   themes: !include themes.yaml
+
+#Secrets
+secret: !include secrets.yaml
