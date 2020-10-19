@@ -9,6 +9,11 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Chicago
   customize: !include customize.yaml
+
+#Google Calendar
+google:
+  client_id: !secret gcalid
+  client_secret: !secret gcalpw
   
 
   
