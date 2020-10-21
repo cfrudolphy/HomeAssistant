@@ -44,12 +44,12 @@
       - person.olga
       - person.patty
       - person.chuck_rudolphy
-      - Person.christina_rudolphy
+      - person.christina_rudolphy
 
 #Chuck & Chris Location Group
   Chuck&Chris_location_group:
     name: "Chuck & Chris Location Group"
     entities:
       - person.chuck_rudolphy
-      - Person.christina_rudolphy
+      - person.christina_rudolphy
 
