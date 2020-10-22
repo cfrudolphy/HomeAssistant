@@ -1,22 +1,22 @@
 #Scene for Day
 
 - id: '1603047891402'
-  name: Day
+  name: day
   entities:
     climate.thermostat:
       hvac_modes:
-      - false
+      - off
       - heat
       - cool
-      - auto
+      - 'auto'
       min_temp: 60
       max_temp: 90
       target_temp_step: 1
       fan_modes:
-      - auto
-      - true
+      - 'auto'
+      - on
       - circulation
-      current_temperature: 75
+      current_temperature: 76
       target_temp_high: 74
       target_temp_low: 66
       fan_mode: auto
@@ -25,58 +25,30 @@
       state: auto
     fan.living_room_fan:
       speed_list:
-      - false
+      - off
       - low
-      - medium
+      - 'medium'
       - high
-      speed: low
+      speed: medium
       friendly_name: Living Room Fan
       supported_features: 1
       state: 'on'
     fan.master_bedroom_fan:
       speed_list:
-      - false
+      - off
       - low
-      - medium
+      - 'medium'
       - high
-      speed: low
+      speed: medium
       friendly_name: Master Bedroom Fan
       supported_features: 1
       state: 'on'
-    switch.blueiris_profile_occupied:
-      friendly_name: BlueIris Profile Occupied
-      state: 'on'
   icon: mdi:weather-sunny
+  
+  
 - id: '1603049556040'
-
-#Scene for Night
-
   name: night
   entities:
-    switch.blueiris_profile_inactive:
-      friendly_name: BlueIris Profile Inactive
-      state: 'off'
-    switch.blueiris_profile_occupied:
-      friendly_name: BlueIris Profile Occupied
-      state: 'off'
-    switch.blueiris_profile_occupied_night:
-      friendly_name: BlueIris Profile Occupied Night
-      state: 'on'
-    switch.blueiris_profile_unoccupied:
-      friendly_name: BlueIris Profile Unoccupied
-      state: 'off'
-    switch.blueiris_profile_profile_4:
-      friendly_name: BlueIris Profile Profile 4
-      state: 'off'
-    switch.blueiris_profile_profile_5:
-      friendly_name: BlueIris Profile Profile 5
-      state: 'off'
-    switch.blueiris_profile_profile_6:
-      friendly_name: BlueIris Profile Profile 6
-      state: 'off'
-    switch.blueiris_profile_profile_7:
-      friendly_name: BlueIris Profile Profile 7
-      state: 'off'
     climate.thermostat:
       hvac_modes:
       - off
@@ -118,3 +90,49 @@
       supported_features: 1
       state: 'on'
   icon: mdi:weather-night
+  
+  
+- id: '1603051213394'
+  name: unoccupied
+  entities:
+    climate.thermostat:
+      hvac_modes:
+      - false
+      - heat
+      - cool
+      - 'auto'
+      min_temp: 60
+      max_temp: 90
+      target_temp_step: 1
+      fan_modes:
+      - auto
+      - true
+      - circulation
+      current_temperature: 75
+      target_temp_high: 78
+      target_temp_low: 60
+      fan_mode: auto
+      friendly_name: Thermostat
+      supported_features: 10
+      state: auto
+    fan.living_room_fan:
+      speed_list:
+      - false
+      - low
+      - medium
+      - high
+      speed: high
+      friendly_name: Living Room Fan
+      supported_features: 1
+      state: 'on'
+    fan.master_bedroom_fan:
+      speed_list:
+      - false
+      - low
+      - medium
+      - high
+      speed: high
+      friendly_name: Master Bedroom Fan
+      supported_features: 1
+      state: 'on'
+  icon: mdi:account-multiple-minus
