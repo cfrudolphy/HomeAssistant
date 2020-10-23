@@ -53,3 +53,23 @@
       - person.chuck_rudolphy
       - person.christina_rudolphy
 
+#Amazon Echo/Dot Media Player Group
+  echomania:
+    name: "Echomania"
+    entities:
+      - media_player.bedroom_dot
+      - media_player.echo
+      - media_player.garage_dot
+      - media_player.living_room_dot
+      - media_player.office_dot
+
+#Amazon Fire TV Media Player Group
+  firetvmania:
+    name: "FireTVmania"
+    entities:
+      - media_player.fire_tv_lr
+      - media_player.fire_tv_stick_gbr
+      - media_player.fire_tv_stick_4k_mbr
+    
+
+
