@@ -1,0 +1,22 @@
+#Google Gmail notify setup
+notify:
+  - name: Gmail
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: cfrudolphy@gmail.com
+    encryption: starttls
+    username: cfrudolphy@gmail.com
+    password: !secret gmail
+    recipient:
+      - cfrudolphy@gmail.com
+      - carudolphy@gmail.com
+    sender_name: homeassistant@ccrudolphy.com
+    
+  - platform: nfandroidtv
+    name: "Fire TV LR"
+    host: 192.168.1.82
+    duration: 10
+    fontsize: "large"
+    color: "indigo"
