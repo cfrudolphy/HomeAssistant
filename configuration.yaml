@@ -10,36 +10,31 @@ homeassistant:
   time_zone: America/Chicago
   customize: !include customize.yaml
 
-#Google Calendar
+# Google Calendar
 google:
   client_id: 800864302205-2sjm1pqsvh50l8j52l02vid4ussarlrk.apps.googleusercontent.com
   client_secret: !secret gcalpw
-  
-
-  
-#Google Gmail notify setup
-notify:
-  - name: Gmail
-    platform: smtp
-    server: smtp.gmail.com
-    port: 587
-    timeout: 15
-    sender: cfrudolphy@gmail.com
-    encryption: starttls
-    username: cfrudolphy@gmail.com
-    password: !secret gmail
-    recipient:
-      - cfrudolphy@gmail.com
-      - carudolphy@gmail.com
-    sender_name: homeassistant@ccrudolphy.com
 
 # Text to speech
 tts:
   - platform: google_translate
 
+# Media Players available
+media_player: !include media_players.yaml
+
+# Notifications
+notify: !include notify.yaml
+
+# Groups
 group: !include groups.yaml
+
+# Automations
 automation: !include automations.yaml
+
+# Scripts
 script: !include scripts.yaml
+
+# Scenes
 scene: !include scenes.yaml
 
 # Switches (lights & appliances no Dimmers) setup in Homeseer
