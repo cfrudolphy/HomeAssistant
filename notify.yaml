@@ -1,5 +1,4 @@
 #Google Gmail notify setup
-notify:
   - name: Gmail
     platform: smtp
     server: smtp.gmail.com
