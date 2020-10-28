@@ -142,3 +142,19 @@
     name: "Kitchen Light 2 Central Scene"
     unique_id: "KitchenLight2CentralScene"
     state_topic: CRUD-06/mcsMQTT/Kitchen/Lighting/Kitchen_Light_2_Central_Scene
+
+# Seasonal Binary Sensors based on month and day.
+
+# Current Date Sensor
+  - platform: time_date
+    display_options:
+      - date
+
+# Season - Fall
+  - platform: template
+      fall:
+        value_template: >
+          {% set today = states('sensor.date').split('-') %}
+          {% set month = today[1]|int %}
+          {% set day = today[2]|int %}
+          {{ month == 9 and day >= 22 or month == 10 or month == 11 and day <=25 }}
