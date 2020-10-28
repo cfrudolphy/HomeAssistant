@@ -152,6 +152,7 @@
 
 # Season - Fall
   - platform: template
+    sensors:
       fall:
         value_template: >
           {% set today = states('sensor.date').split('-') %}
