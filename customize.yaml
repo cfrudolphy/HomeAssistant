@@ -1,0 +1,13 @@
+zone.home: {}
+person.chuck_rudolphy:
+  entity_picture: /local/chuck.jpg
+person.abita:
+  entity_picture: /local/abita.jpg
+person.olga:
+  entity_picture: /local/olga.jpg
+person.christina_rudolphy:
+  entity_picture: /local/christina.jpg
+person.emily:
+  entity_picture: /local/emily.jpg
+person.patty:
+  entity_picture: /local/patty.jpg
