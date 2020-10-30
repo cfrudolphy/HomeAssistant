@@ -29,7 +29,7 @@
       title: DESK LAMP ON
     service: notify.mobile_app_sm_a102u
 - id: '1602544616413'
-  alias: Outside lights on at twilight
+  alias: Lights/Time - Outside lights on at twilight
   description: ''
   trigger:
   - platform: numeric_state
@@ -43,7 +43,7 @@
     entity_id: group.outside_lights
   mode: single
 - id: '1602619288268'
-  alias: Outside Lights after 11:00pm
+  alias: Lights/Time - Outside Lights after 11:00pm
   description: Turn the Outside Lights (Entryway & Garage) off at 11:00pm
   trigger:
   - platform: time
@@ -55,7 +55,7 @@
     entity_id: group.outside_lights
   mode: single
 - id: '1602619565916'
-  alias: Chuck Bedlamp on at 5:30am
+  alias: Lights/MBR - Chuck Bedlamp on at 5:30am
   description: Turn Chuck's Bedlamp on at 5:30am every morning
   trigger:
   - platform: time
@@ -68,7 +68,7 @@
     entity_id: light.chuck_bed_lamp
   mode: single
 - id: '1602619749996'
-  alias: Bedlamps on @7:30am
+  alias: Lights/MBR - Bedlamps on @7:30am
   description: Turn both Bedlamps (Chuck & Chris) at 7:30am every day
   trigger:
   - platform: time
@@ -81,7 +81,7 @@
     entity_id: light.bed_lamps
   mode: single
 - id: '1602622036217'
-  alias: Lock all Door Locks @ 11pm
+  alias: Locks - Lock all Door Locks @ 11pm
   description: Lock all Door Locks @ 11pm every day
   trigger:
   - platform: time
@@ -96,7 +96,7 @@
     entity_id: lock.front_door_lock
   mode: single
 - id: '1602623060538'
-  alias: All Kitchen Lights On via Key Press
+  alias: Lights/Kitchen - All Kitchen Lights On via Key Press
   description: Kitchen Light 2 Switch pressed 2 times to turn on all lights 100%
   trigger:
   - platform: mqtt
@@ -110,7 +110,7 @@
     entity_id: light.kitchen_lights
   mode: single
 - id: '1602625902179'
-  alias: All Kitchen Lights Off via Keypress
+  alias: Lights/Kitchen - All Kitchen Lights Off via Keypress
   description: Turn All Kitchen Lights off when Kitchen Light 2 is pressed off 2 times
   trigger:
   - platform: mqtt
@@ -123,7 +123,7 @@
     entity_id: light.kitchen_lights
   mode: single
 - id: '1602626586824'
-  alias: Master Bathroom Closet Light On
+  alias: Lights/MBR - Master Bathroom Closet Light On
   description: When Closet Door Opens Turn Closet Light On
   trigger:
   - platform: mqtt
@@ -136,13 +136,14 @@
     entity_id: switch.master_closet_light
   mode: single
 - id: '1602626948325'
-  alias: Master Bathroom Closet Light Off
+  alias: Lights/MBR - Master Bathroom Closet Light Off
   description: Turn the Master Bathroom Closet Light Off after 10 minutes
   trigger:
   - platform: state
     entity_id: switch.master_closet_light
     to: 'on'
-    for: 00:10:00
+    for: 00:05:00
+    from: 'off'
   condition: []
   action:
   - service: switch.turn_off
@@ -150,7 +151,7 @@
     entity_id: switch.master_closet_light
   mode: single
 - id: '1602695341446'
-  alias: Inside Garage Light On by Door Opening
+  alias: Lights/Garage - Inside Garage Light On by Door Opening
   description: Turn the Inside Garage Light on because either door was open
   trigger:
   - platform: mqtt
@@ -166,7 +167,7 @@
     entity_id: switch.inside_garage_light
   mode: single
 - id: '1602710240457'
-  alias: Inside Garage Light Off with Delay
+  alias: Lights/Garage - Inside Garage Light Off with Delay
   description: Turn Inside Garage Light Off after 5 minutes when both doors are closed.
   trigger:
   - platform: mqtt
@@ -195,7 +196,7 @@
     entity_id: switch.inside_garage_light
   mode: single
 - id: '1602716702038'
-  alias: Chuck Bedlamp On by Keypress
+  alias: Lights/MBR - Chuck Bedlamp On by Keypress
   description: Turn Chuck's Bedlamp on to 50% by double tap up on wall switch
   trigger:
   - platform: mqtt
@@ -209,7 +210,7 @@
     entity_id: light.chuck_bed_lamp
   mode: single
 - id: '1602716856686'
-  alias: Chris Bedlamp on by Keypress
+  alias: Lights/MBR - Chris Bedlamp on by Keypress
   description: Turn Chis's Bedlamp on to 50% by triple tap up on wall switch
   trigger:
   - platform: mqtt
@@ -223,7 +224,7 @@
     entity_id: light.chris_bed_lamp
   mode: single
 - id: '1602716990552'
-  alias: Master Bedlamps on by Keypress
+  alias: Lights/MBR - Master Bedlamps on by Keypress
   description: Turn on the Master Bedroom Bedlamps to 100% by double tap down on wall
     switch
   trigger:
@@ -238,7 +239,7 @@
     entity_id: light.bed_lamps
   mode: single
 - id: '1602717181785'
-  alias: Master Bedlamps off by Keypress
+  alias: Lights/MBR - Master Bedlamps off by Keypress
   description: Turn all Master Bedlamps off with triple tap down on wall switch
   trigger:
   - platform: mqtt
@@ -251,44 +252,50 @@
     entity_id: light.bed_lamps
   mode: single
 - id: '1602873413692'
-  alias: House Occupied
+  alias: Occupancy - House Occupied
   description: Changes the status of input boolean House Occupied 286ats_location
     group is here.
   trigger:
   - platform: state
     entity_id: group.286ats_location_group
-    from: 'off'
-    to: 'on'
+    to: home
+    from: not_home
   condition: []
   action:
-  - service: homeassistant.turn_on
+  - service: input_boolean.turn_on
     data: {}
     entity_id: input_boolean.house_occupied
   - service: mqtt.publish
     data:
       topic: CRUD-06/mcsMQTT/Occupancy/Virtual/Occupancy/Control
       payload: '100'
+  - service: lock.unlock
+    data: {}
+    entity_id: lock.front_door_lock
   mode: single
 - id: '1602878311010'
-  alias: House Un-occupied
+  alias: Occupancy - House Un-occupied
   description: ''
   trigger:
   - platform: state
     entity_id: group.286ats_location_group
-    to: 'off'
-    from: 'on'
+    from: home
+    to: not_home
   condition: []
   action:
-  - service: homeassistant.turn_off
+  - service: input_boolean.turn_off
     data: {}
     entity_id: input_boolean.house_occupied
   - service: mqtt.publish
     data:
       topic: CRUD-06/mcsMQTT/Occupancy/Virtual/Occupancy/Control
       payload: '0'
+  - service: lock.lock
+    data: {}
+    entity_id: lock.front_door_lock
   mode: single
 - id: '1602974812430'
-  alias: Turn Entryway Receptacle On
+  alias: Switch - Turn Entryway Receptacle On
   description: Holiday - Turn Entryway Receptacle On Early Evening
   trigger:
   - platform: state
@@ -302,7 +309,7 @@
     entity_id: switch.entry_way_receptacle
   mode: single
 - id: '1602974928482'
-  alias: Turn Entryway Recepticle Off
+  alias: Switch - Turn Entryway Recepticle Off
   description: Holidays - Turn Entryway Receptacle off at end of Early Night
   trigger:
   - platform: state
@@ -316,11 +323,75 @@
     entity_id: switch.entry_way_receptacle
   mode: single
 - id: '1603048533629'
-  alias: Set Scene Day
+  alias: Occupancy - Set Scene Day
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.house_occupied
+    to: 'on'
+    from: 'off'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.day
+    state: 'on'
+  action:
+  - scene: scene.day
+  - service: mqtt.publish
+    data:
+      topic: BlueIris/admin
+      payload: schedule=Default
+  mode: single
+- id: '1603049334521'
+  alias: Occupancy - Set Scene Night
+  description: Sets the night scene
+  trigger:
+  - platform: state
+    entity_id: input_boolean.house_occupied
+    to: 'on'
+    from: 'off'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.night
+    state: 'on'
+  action:
+  - scene: scene.night
+  - service: mqtt.publish
+    data:
+      topic: BlueIris/admin
+      payload: schedule=Default
+  mode: single
+- id: '1603051838730'
+  alias: Occupancy - Set Scene Unoccupied
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.house_occupied
+    to: 'off'
+    from: 'on'
+  condition: []
+  action:
+  - scene: scene.unoccupied
+  - service: mqtt.publish
+    data:
+      topic: BlueIris/admin
+      payload: schedule=Unoccupied
+  - service: lock.lock
+    data: {}
+    entity_id: lock.back_door_lock
+  - service: lock.lock
+    data: {}
+    entity_id: lock.front_door_lock
+  - service: cover.close_cover
+    data: {}
+    entity_id: cover.garage_door
+  mode: single
+- id: '1603053530104'
+  alias: Time - Set Scene Day
   description: ''
   trigger:
   - platform: state
     entity_id: binary_sensor.day
+    from: 'off'
     to: 'on'
   condition:
   - condition: state
@@ -328,18 +399,185 @@
     state: 'on'
   action:
   - scene: scene.day
+  - service: mqtt.publish
+    data:
+      topic: BlueIris/admin
+      payload: schedule=default
   mode: single
-- id: '1603049334521'
-  alias: Set Scene Night
-  description: Sets the night scene
+- id: '1603053682484'
+  alias: Time - Set Scene Night
+  description: ''
   trigger:
   - platform: state
     entity_id: binary_sensor.night
+    from: 'off'
     to: 'on'
   condition:
   - condition: state
     entity_id: input_boolean.house_occupied
     state: 'on'
   action:
-  - scene: scene.day
+  - scene: scene.night
+  - service: mqtt.publish
+    data:
+      topic: BlueIris/admin
+      payload: schedule=Default
+  mode: single
+- id: '1603122886854'
+  alias: Lights - Arrival Late Night
+  description: Turn entry way lights on upon arrival in the Late Night (after 11pm)
+  trigger:
+  - platform: state
+    entity_id: group.286ats_location_group
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.late_night
+    state: 'on'
+  action:
+  - service: homeassistant.turn_on
+    data: {}
+    entity_id: group.entryway_lights
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.outside_garage_light
+  mode: single
+- id: '1603123472607'
+  alias: Lights - Entryway and Outside Garage Off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.entryway_lights
+    to: 'on'
+    for: '30'
+  - platform: state
+    entity_id: switch.outside_garage_light
+    to: 'on'
+    for: '30'
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.early_night
+      state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: group.entryway_lights
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.outside_garage_light
+  mode: single
+- id: '1603145228040'
+  alias: Notify/TTS - Clothes Washer Complete
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.washer_wash_completed
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: notify.alexa_media
+    data:
+      target:
+      - media_player.office_dot
+      - media_player.echo
+      - media_player.bedroom_dot
+      data:
+        type: announce
+      message: Washing Machine Cycle Completed
+  mode: single
+- id: '1603150183515'
+  alias: 'Notify/TTS - Clothes Dryer Complete '
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.dryer_dry_completed
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: notify.alexa_media
+    data:
+      target:
+      - media_player.office_dot
+      - media_player.echo
+      - media_player.bedroom_dot
+      data:
+        type: announce
+      message: Dryer Cycle Completed
+  mode: single
+- id: '1603412581200'
+  alias: Lights/MBR - Bedlamps on at 9:00pm
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:00:00'
+  condition:
+  - condition: state
+    entity_id: input_boolean.house_occupied
+    state: 'on'
+  action:
+  - service: light.turn_on
+    data:
+      brightness_pct: 50
+    entity_id: light.bed_lamps
+  mode: single
+- id: '1603570654042'
+  alias: Notify/Text - Christina Arrives Home
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: person.christina_rudolphy
+    from: not_home
+    to: home
+  condition:
+  - condition: state
+    entity_id: input_boolean.house_occupied
+    state: 'on'
+  action:
+  - service: notify.fire_tv_lr
+    data:
+      message: Christina is arriving home
+      title: Arrival Notification
+  - service: notify.alexa_media
+    data:
+      target:
+      - media_player.office_dot
+      - media_player.echo
+      - media_player.bedroom_dot
+      - media_player.garage_dot
+      data:
+        type: announce
+      message: Christina is arriving home
+  mode: single
+- id: '1603921973173'
+  alias: 'Notify/Text - Chuck Arrives Home '
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: person.chuck_rudolphy
+    from: not_home
+    to: home
+  condition:
+  - condition: state
+    entity_id: input_boolean.house_occupied
+    state: 'on'
+  action:
+  - service: notify.fire_tv_lr
+    data:
+      message: Chuck is arriving home
+      title: Arrival Notification
+  - service: notify.alexa_media
+    data:
+      target:
+      - media_player.office_dot
+      - media_player.echo
+      - media_player.bedroom_dot
+      - media_player.garage_dot
+      data:
+        type: announce
+      message: Chuck is arriving home
   mode: single
