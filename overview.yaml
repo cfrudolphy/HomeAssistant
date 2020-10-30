@@ -1,0 +1,586 @@
+#my main dashboard and is set as the default dashboard.
+title: 286ATS
+views:
+  - path: default_view
+    title: Home
+    visible:
+      - user: c0a2cae14b694be585cce0b1f81a7b8e
+      - user: ab70a0537f3a43a09ad75b54325b94db
+    badges:
+      - entity: binary_sensor.updater
+      - entity: sun.sun
+      - entity: sensor.hacs
+      - entity: input_boolean.garage_occupied
+    cards:
+      - type: entity-filter
+        entities:
+          - light.kitchen_lights
+          - light.dining_room_light
+          - light.living_room_lights
+          - light.master_bedroom_lights
+          - light.office_lights
+          - light.inside_garage_light
+          - group.entryway_lights
+          - group.outside_lights
+          - input_boolean.house_occupied
+          - input_boolean.garage_occupied
+          - lock.back_door_lock
+          - lock.front_door_lock
+          - cover.garage_door
+        state_filter:
+          - 'on'
+          - unlocked
+          - open
+        card:
+          type: glance
+          title: House Status
+      - entity: weather.kcxo_daynight
+        type: weather-forecast
+      - type: entity-filter
+        entities:
+          - person.abita
+          - person.christina_rudolphy
+          - person.chuck_rudolphy
+          - person.emily
+          - person.olga
+          - person.patty_r_millspaugh
+        state_filter:
+          - home
+        card:
+          type: glance
+          title: People at 286ATS
+      - entity: weather.kcxo_hourly
+        type: weather-forecast
+      - entity: climate.thermostat
+        type: thermostat
+      - type: markdown
+        content: |-
+          {% if (state_attr( 'sensor.montgomery', 'warning_count')|int > 1) %}
+                  <font color="red"><center><h2>****** WEATHER WARNINGS ******
+                  ** ARE ACTIVE FOR YOUR AREA **</h2></center></font>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomer', 'warning_count')|int == 1) %}
+                  <font color="red"><center><h2>****** A WEATHER WARNING ******
+                  <br>*** IS ACTIVE FOR YOUR AREA ***</h2></center></font>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'watch_count')|int > 1) %}
+                  <font color="orange"><center><h2>******* WEATHER WATCHES *******
+                  <br>** ARE ACTIVE FOR YOUR AREA **</h2></center></font>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'watch_count')|int == 1) %}
+                  <font color="orange"><center><h2>******* A WEATHER WATCH *******
+                  <br>*** IS ACTIVE FOR YOUR AREA ***</h2></center></font>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'advisory_count')|int > 1) %}
+                  <font color="orange"><center><h2>***** WEATHER ADVISORIES *****
+                  <br>** ARE ACTIVE FOR YOUR AREA ** </h2></center></font>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'advisory_count')|int == 1) %}
+                  <font color="orange"><center><h2>***** A WEATHER ADVISORY *****
+                  <br>*** IS ACTIVE FOR YOUR AREA ***</h2></center></font>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'statement_count')|int > 1) %}
+                  <center><h2>***** WEATHER STATEMENTS *****
+                  <br>** ARE ACTIVE FOR YOUR AREA **</h2></center>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'statement_count')|int == 1) %}
+                  <center><h2>***** A WEATHER STATEMENT *****
+                  <br>*** IS ACTIVE FOR YOUR AREA ***</h2></center>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'outlook_count')|int > 1) %}
+                  <center><h2>****** WEATHER OUTLOOKS ******
+                  <br>** ARE ACTIVE FOR YOUR AREA **</h2></center>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'outlook_count')|int == 1) %}
+                  <center><h2>****** A WEATHER OUTLOOK ******
+                  <br>*** IS ACTIVE FOR YOUR AREA ***</h2></center>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'alert_count')|int > 1) %}
+                  <center><h2>******* WEATHER ALERTS *******
+                  <br>** ARE ACTIVE FOR YOUR AREA **</h2></center>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'alert_count')|int == 1) %}
+                  <center><h2>******* A WEATHER ALERT *******
+                  <br>*** IS ACTIVE FOR YOUR AREA ***</h2></center>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'message_count')|int > 1) %}
+                  <center><h2>****** WEATHER MESSAGES ******
+                  <br>** ARE ACTIVE FOR YOUR AREA **</h2></center>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'message_count')|int == 1) %}
+                  <center><h2>****** A WEATHER MESSAGE ******
+                  <br>*** IS ACTIVE FOR YOUR AREA ***</h2></center>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'important_count')|int > 1) %}
+                  <center><h2>** IMPORTANT WEATHER ALERTS **
+                  <br>** ARE ACTIVE FOR YOUR AREA **</h2></center>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'important_count')|int == 1) %}
+                  <center><h2>** AN IMPORTANT WEATHER ALERT **
+                  <br>*** IS ACTIVE FOR YOUR AREA ***</h2></center>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'test_count')|int > 1) %}
+                  <center><h2>**** WEATHER ALERT TESTS ****
+                  <br>** ARE ACTIVE FOR YOUR AREA **</h2></center>
+               {% endif %}
+               {% if (state_attr( 'sensor.montgomery', 'test_count')|int == 1) %}
+                  <center><h2>**** A WEATHER ALERT TEST ****
+                  <br>*** IS ACTIVE FOR YOUR AREA ***</h2></center>
+               {% endif %}
+        conditions:
+          - entity: sensor.montgomery
+            state: 'Yes'
+            type: conditional
+            title: NOAA Weather Alerts
+  - badges: []
+    cards:
+      - entities:
+          - entity: lock.front_door_lock
+          - entity: sensor.front_door_access
+          - entity: sensor.front_door_state
+          - entity: sensor.front_door_lock_battery
+          - entity: sensor.front_door_sensor_battery
+        title: Front Door Lock
+        type: entities
+      - cards:
+          - entity: switch.inside_entry_way_light
+            hold_action:
+              action: more-info
+            icon: 'hass:lightbulb'
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: toggle
+            type: button
+          - entity: switch.outside_entry_way_light
+            hold_action:
+              action: more-info
+            icon: 'hass:lightbulb'
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: toggle
+            type: button
+        type: horizontal-stack
+      - type: entity
+        entity: switch.entry_way_receptacle
+    path: entry-way
+    title: Entry Way
+  - badges: []
+    cards:
+      - cards:
+          - double_tap_action:
+              action: toggle
+            entity: light.kitchen_light_1
+            type: light
+          - double_tap_action:
+              action: toggle
+            entity: light.kitchen_light_2
+            type: light
+          - double_tap_action:
+              action: toggle
+            entity: light.kitchen_light_3
+            type: light
+        type: vertical-stack
+      - cards:
+          - entity: switch.kitchen_dishwasher
+            hold_action:
+              action: more-info
+            icon: 'hass:flash'
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: toggle
+            type: button
+          - entity: switch.kitchen_disposal
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: toggle
+            type: button
+        type: vertical-stack
+    path: kitchen
+    title: Kitchen
+    visible:
+      - user: c0a2cae14b694be585cce0b1f81a7b8e
+      - user: ab70a0537f3a43a09ad75b54325b94db
+  - badges: []
+    cards:
+      - double_tap_action:
+          action: toggle
+        entity: light.dining_room_light
+        name: Dining Room Light
+        type: light
+    path: dining-room
+    title: Dining Room
+  - badges: []
+    cards:
+      - entity: fan.living_room_fan
+        name: Living Room Fan
+        type: entity
+      - cards:
+          - double_tap_action:
+              action: toggle
+            entity: light.living_room_lamp
+            type: light
+          - double_tap_action:
+              action: toggle
+            entity: light.living_room_fan_light
+            type: light
+          - double_tap_action:
+              action: toggle
+            entity: light.hue_iris_1
+            type: light
+        type: vertical-stack
+      - columns: 2
+        entities:
+          - entity: lock.back_door_lock
+          - entity: sensor.back_door_state
+          - entity: sensor.back_door_access
+          - entity: sensor.back_door_lock_battery
+          - entity: sensor.back_door_sensor_battery
+        type: glance
+      - cards:
+          - aspect_ratio: 0%
+            entity: camera.blueiris_back_yard_cam
+            image: 'https://demo.home-assistant.io/stub_config/bedroom.png'
+            type: picture-entity
+          - entities:
+              - entity: binary_sensor.blueiris_back_yard_cam_connectivity
+              - entity: binary_sensor.blueiris_back_yard_cam_motion
+            title: BlueIris Back Yard Camera
+            type: entities
+          - aspect_ratio: 0%
+            entity: camera.blueiris_lr_camera
+            image: 'https://demo.home-assistant.io/stub_config/bedroom.png'
+            type: picture-entity
+          - entities:
+              - entity: binary_sensor.blueiris_lr_camera_connectivity
+              - entity: binary_sensor.blueiris_lr_camera_motion
+            title: BlueIris LR Camera
+            type: entities
+        type: vertical-stack
+      - cards:
+          - entities:
+              - entity: remote.lr_hub
+            title: Media
+            type: entities
+          - entity: media_player.plex_plex_for_android_tv_aftn
+            type: media-control
+        type: vertical-stack
+    path: living-room
+    title: Living Room
+    visible:
+      - user: c0a2cae14b694be585cce0b1f81a7b8e
+      - user: ab70a0537f3a43a09ad75b54325b94db
+  - badges: []
+    cards:
+      - columns: 1
+        entities:
+          - entity: sensor.washer
+          - entity: binary_sensor.washer_wash_completed
+          - entity: binary_sensor.washer_error_state
+          - entity: sensor.dryer
+          - entity: binary_sensor.dryer_dry_completed
+          - entity: binary_sensor.dryer_error_state
+        title: LG Washer & Dryer
+        type: glance
+      - entities:
+          - entity: sensor.laundry_garage_door_state
+          - entity: sensor.laundry_garage_door_sensorbattery
+        title: Laundry-Garage Door
+        type: entities
+    path: laundry-room
+    title: Laundry Room
+  - badges: []
+    cards:
+      - cards:
+          - entity: switch.inside_garage_light
+            hold_action:
+              action: more-info
+            icon: 'hass:lightbulb'
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: toggle
+            type: button
+          - entity: switch.outside_garage_light
+            hold_action:
+              action: more-info
+            icon: 'hass:lightbulb'
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: toggle
+            type: button
+        type: vertical-stack
+      - entities:
+          - entity: cover.garage_door
+        title: Garage Door
+        type: entities
+      - entities:
+          - entity: sensor.laundry_garage_door_state
+          - entity: sensor.laundry_garage_door_sensorbattery
+        title: Laundry-Garage Door
+        type: entities
+    path: garage
+    title: Garage
+  - badges: []
+    cards:
+      - entity: switch.master_closet_light
+        hold_action:
+          action: more-info
+        icon: 'hass:lightbulb'
+        show_icon: true
+        show_name: true
+        show_state: false
+        tap_action:
+          action: toggle
+        type: button
+      - columns: 2
+        entities:
+          - entity: sensor.master_bath_closet_door_state
+          - entity: sensor.master_bath_closet_door_battery
+        title: Closet Door
+        type: glance
+    path: master-bath
+    title: Master Bath
+  - badges: []
+    cards:
+      - cards:
+          - double_tap_action:
+              action: toggle
+            entity: light.chuck_bed_lamp
+            hold_action:
+              action: more-info
+            type: light
+          - double_tap_action:
+              action: toggle
+            entity: light.chris_bed_lamp
+            hold_action:
+              action: more-info
+            type: light
+          - double_tap_action:
+              action: toggle
+            entity: light.master_bedroom_fan_light
+            hold_action:
+              action: more-info
+            type: light
+        type: vertical-stack
+      - entity: fan.master_bedroom_fan
+        name: Master Bedroom Fan
+        type: entity
+      - cards:
+          - entities:
+              - entity: remote.harmony_hub
+            title: Media
+            type: entities
+          - entity: media_player.plex_plex_for_android_tv_mbr_tv
+            type: media-control
+        type: vertical-stack
+    path: master-bedroom
+    title: Master Bedroom
+  - badges: []
+    cards:
+      - cards:
+          - double_tap_action:
+              action: toggle
+            entity: light.chuck_desk_lamp
+            hold_action:
+              action: more-info
+            type: light
+          - double_tap_action:
+              action: toggle
+            entity: light.chris_desk_lamp
+            hold_action:
+              action: more-info
+            type: light
+        type: vertical-stack
+      - cards:
+          - entity: sensor.plex_crud_04_ccrudolphy_com
+            type: entity
+          - entity: media_player.plex_plex_web_chrome_windows
+            type: media-control
+        type: vertical-stack
+      - columns: 2
+        entities:
+          - entity: sensor.mfc_j885dw_status
+          - entity: sensor.mfc_j885dw_black_ink_remaining
+          - entity: sensor.mfc_j885dw_cyan_ink_remaining
+          - entity: sensor.mfc_j885dw_magenta_ink_remaining
+          - entity: sensor.mfc_j885dw_yellow_ink_remaining
+        title: Printer Status
+        type: glance
+      - entities:
+          - entity: switch.blueiris_profile_inactive
+          - entity: switch.blueiris_profile_occupied
+          - entity: switch.blueiris_profile_occupied_night
+          - entity: switch.blueiris_profile_unoccupied
+          - entity: binary_sensor.blueiris_alerts
+        show_header_toggle: false
+        title: Blue Iris Server Status
+        type: entities
+    path: office
+    title: Office
+  - badges: []
+    cards:
+      - entity: media_player.plex_plex_for_android_tv_aftt
+        type: media-control
+    path: guest-bedroom
+    title: Guest Bedroom
+  - badges: []
+    cards:
+      - entities:
+          - entity: lock.back_door_lock
+          - entity: sensor.back_door_access
+          - entity: sensor.back_door_state
+          - entity: sensor.back_door_lock_battery
+          - entity: sensor.back_door_sensor_battery
+        title: Back Door Lock
+        type: entities
+      - entities:
+          - entity: sensor.master_bath_closet_door_state
+          - entity: sensor.master_bath_closet_door_battery
+        title: Master Bath Closet Door
+        type: entities
+      - entities:
+          - entity: cover.garage_door
+        title: Garage Door
+        type: entities
+      - entities:
+          - entity: lock.front_door_lock
+          - entity: sensor.front_door_access
+          - entity: sensor.front_door_state
+          - entity: sensor.front_door_lock_battery
+          - entity: sensor.front_door_sensor_battery
+        title: Front Door Lock
+        type: entities
+      - entities:
+          - entity: sensor.laundry_garage_door_state
+          - entity: sensor.laundry_garage_door_sensorbattery
+        title: Laundry-Garage Door
+        type: entities
+    path: access-control
+    title: Access Control
+    visible:
+      - user: c0a2cae14b694be585cce0b1f81a7b8e
+      - user: ab70a0537f3a43a09ad75b54325b94db
+  - badges: []
+    cards:
+      - type: picture
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        image: /local/christina.jpg
+      - entities:
+          - sensor.sm_g960u_wifi_connection
+          - sensor.sm_g960u_geocoded_location
+          - sensor.sm_g960u_bluetooth_connection
+          - sensor.sm_g960u_light_sensor
+          - sensor.sm_g960u_next_alarm
+          - sensor.sm_g960u_storage_sensor
+        title: CAR Android Phone
+        type: entities
+      - entities:
+          - sensor.total_steps_2
+          - sensor.daily_step_goal_2
+          - sensor.total_kilocalories_2
+          - sensor.active_kilocalories_2
+          - sensor.bmr_kilocalories_2
+          - sensor.total_distance_mtr_2
+          - sensor.active_time_2
+          - sensor.sedentary_time_2
+          - sensor.sleeping_time_2
+          - sensor.awake_duration_2
+          - sensor.sleep_duration_2
+          - sensor.floors_ascended_2
+          - sensor.floors_descended_2
+          - sensor.floors_ascended_goal_2
+          - sensor.min_heart_rate_2
+          - sensor.max_heart_rate_2
+          - sensor.resting_heart_rate_2
+          - sensor.avg_stress_level_2
+          - sensor.max_stress_level_2
+          - sensor.rest_stress_duration_2
+          - sensor.activity_stress_duration_2
+          - sensor.uncat_stress_duration_2
+          - sensor.total_stress_duration_2
+          - sensor.low_stress_duration_2
+          - sensor.medium_stress_duration_2
+          - sensor.high_stress_duration_2
+          - sensor.lowest_spo2_2
+        title: CAR Garmin VivoActive
+        type: entities
+    path: christina
+    title: Christina
+  - badges: []
+    cards:
+      - entities:
+          - entity: person.chuck_rudolphy
+          - entity: person.christina_rudolphy
+          - entity: person.abita
+          - entity: person.olga
+          - entity: person.emily
+          - entity: person.patty
+        title: Location Tracking
+        type: entities
+      - type: map
+        entities:
+          - entity: device_tracker.life360_chuck_rudolphy
+          - entity: device_tracker.life360_abita
+          - entity: device_tracker.life360_christina
+          - entity: device_tracker.life360_emily
+          - entity: device_tracker.life360_olga
+          - entity: device_tracker.life360_patty_r_millspaugh
+        hours_to_show: 0
+        dark_mode: false
+    path: location
+    theme: ''
+    title: Location
+  - badges: []
+    cards:
+      - hold_action:
+          action: none
+        image: /local/chuck.jpg
+        tap_action:
+          action: none
+        type: picture
+      - attribute: message
+        entity: calendar.chuck_rudolphy
+        type: entity
+      - entities:
+          - entity: sensor.pixel_4a_wifi_connection
+          - entity: sensor.pixel_4a_geocoded_location
+          - entity: sensor.pixel_4a_bluetooth_connection
+          - entity: sensor.pixel_4a_storage_sensor
+          - entity: sensor.pixel_4a_audio_sensor
+          - entity: sensor.pixel_4a_battery_level
+          - entity: sensor.pixel_4a_battery_state
+        title: CFR Android Phone
+        type: entities
+      - entities:
+          - sensor.total_steps
+          - sensor.daily_step_goal
+          - sensor.total_kilocalories
+          - sensor.active_kilocalories
+          - sensor.bmr_kilocalories
+          - sensor.total_distance_mtr
+          - sensor.active_time
+          - sensor.sedentary_time
+          - sensor.sleeping_time
+          - sensor.floors_ascended_goal
+        title: CFR Garmin VivoActive
+        type: entities
+      - entity: media_player.plex_plex_for_android_mobile_galaxy_a10e
+        type: media-control
+    path: chuck
+    title: Chuck
