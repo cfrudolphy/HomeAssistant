@@ -54,6 +54,7 @@ views:
       - entity: climate.thermostat
         type: thermostat
       - type: markdown
+        title: NOAA Weather Alerts
         content: |-
           {% if (state_attr( 'sensor.montgomery', 'warning_count')|int > 1) %}
                   <font color="red"><center><h2>****** WEATHER WARNINGS ******
@@ -131,7 +132,7 @@ views:
           - entity: sensor.montgomery
             state: 'Yes'
             type: conditional
-            title: NOAA Weather Alerts
+            
   - badges: []
     cards:
       - entities:
