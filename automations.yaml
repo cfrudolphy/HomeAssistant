@@ -35,7 +35,7 @@
   - platform: numeric_state
     entity_id: sun.sun
     attribute: elevation
-    below: '-4.0'
+    below: '-3.0'
   condition: []
   action:
   - service: homeassistant.turn_on
@@ -156,7 +156,7 @@
   trigger:
   - platform: mqtt
     topic: CRUD-06/mcsMQTT/Garage/Access_Control/Garage_Door
-    payload: Open
+    payload: open
   - platform: mqtt
     topic: CRUD-06/mcsMQTT/Garage/Access_Control/Laundry-Garage_Door_Sensor_Notification
     payload: Open
@@ -170,25 +170,35 @@
   alias: Lights/Garage - Inside Garage Light Off with Delay
   description: Turn Inside Garage Light Off after 5 minutes when both doors are closed.
   trigger:
-  - platform: mqtt
-    topic: CRUD-06/mcsMQTT/Garage/Access_Control/Garage_Door
-    payload: closed
-  - platform: mqtt
-    topic: CRUD-06/mcsMQTT/Garage/Access_Control/Laundry-Garage_Door_Sensor_Notification
-    payload: Closed
-  condition:
-  - condition: state
-    entity_id: sensor.laundry_garage_door_state
-    state: Closed
-  - condition: state
+  - platform: state
     entity_id: cover.garage_door
-    state: closed
-  - condition: state
-    entity_id: switch.inside_garage_light
-    state: 'on'
-  - condition: state
-    entity_id: input_boolean.garage_occupied
-    state: 'off'
+    from: open
+    to: closed
+  - platform: state
+    entity_id: sensor.laundry_garage_door_state
+    from: Open
+    to: Closed
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      state: 'on'
+      entity_id: switch.inside_garage_light
+  - condition: and
+    conditions:
+    - condition: state
+      state: 'off'
+      entity_id: input_boolean.garage_occupied
+  - condition: and
+    conditions:
+    - condition: state
+      state: closed
+      entity_id: cover.garage_door
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.laundry_garage_door_state
+      state: Closed
   action:
   - delay: 00:05:00
   - service: switch.turn_off
@@ -252,7 +262,7 @@
     entity_id: light.bed_lamps
   mode: single
 - id: '1602873413692'
-  alias: Occupancy - House Occupied
+  alias: Occupancy/Arrival - House Occupied
   description: Changes the status of input boolean House Occupied 286ats_location
     group is here.
   trigger:
@@ -274,7 +284,7 @@
     entity_id: lock.front_door_lock
   mode: single
 - id: '1602878311010'
-  alias: Occupancy - House Un-occupied
+  alias: Occupancy/Exit - House Un-occupied
   description: ''
   trigger:
   - platform: state
@@ -323,7 +333,7 @@
     entity_id: switch.entry_way_receptacle
   mode: single
 - id: '1603048533629'
-  alias: Occupancy - Set Scene Day
+  alias: Occupancy/Arrival - Set Scene Day
   description: ''
   trigger:
   - platform: state
@@ -342,7 +352,7 @@
       payload: schedule=Default
   mode: single
 - id: '1603049334521'
-  alias: Occupancy - Set Scene Night
+  alias: Occupancy/Arrival - Set Scene Night
   description: Sets the night scene
   trigger:
   - platform: state
@@ -361,7 +371,7 @@
       payload: schedule=Default
   mode: single
 - id: '1603051838730'
-  alias: Occupancy - Set Scene Unoccupied
+  alias: Occupancy/Exit - Set Scene Unoccupied
   description: ''
   trigger:
   - platform: state
@@ -429,8 +439,8 @@
   trigger:
   - platform: state
     entity_id: group.286ats_location_group
-    from: 'off'
-    to: 'on'
+    from: not_home
+    to: home
   condition:
   - condition: state
     entity_id: binary_sensor.late_night
@@ -580,4 +590,21 @@
       data:
         type: announce
       message: Chuck is arriving home
+  mode: single
+- id: '1604424120327'
+  alias: Occupancy/Arrival - Early Night Turn on Inside Entryway Light
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.286ats_location_group
+    from: not_home
+    to: home
+  condition:
+  - condition: state
+    entity_id: binary_sensor.early_night
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.inside_entry_way_light
   mode: single
