@@ -3,9 +3,9 @@
 #Fire TV Living Room
   - platform: androidtv
     name: "Fire TV LR"
-    host: 192.168.1.82
+    host: 192.168.1.182
 
 #Yamaha RX-V479 AV Receiver in Living Room
 
   - platform: yamaha
-    host: 192.168.1.74
+    host: 192.168.1.174
