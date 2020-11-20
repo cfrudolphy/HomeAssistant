@@ -15,7 +15,7 @@
     
   - platform: nfandroidtv
     name: "Fire TV LR"
-    host: 192.168.1.82
+    host: 192.168.1.182
     duration: 10
     fontsize: "large"
     color: "indigo"
