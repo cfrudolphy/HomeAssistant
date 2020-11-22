@@ -19,3 +19,10 @@
     duration: 10
     fontsize: "large"
     color: "indigo"
+
+  - platform: nfandroidtv
+    name: "Fire TV MBR"
+    host: 192.168.1.184
+    duration: 10
+    fontsize: "large"
+    color: "indigo"
