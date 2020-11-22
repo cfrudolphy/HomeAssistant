@@ -57,19 +57,18 @@
   echomania:
     name: "Echomania"
     entities:
-      - media_player.bedroom_dot
-      - media_player.echo
-      - media_player.garage_dot
-      - media_player.living_room_dot
-      - media_player.office_dot
+      - media_player.mbrdot
+      - media_player.kitchenecho
+      - media_player.garagedot
+      - media_player.officedot
 
 #Amazon Fire TV Media Player Group
   firetvmania:
     name: "FireTVmania"
     entities:
-      - media_player.fire_tv_lr
-      - media_player.fire_tv_stick_gbr
-      - media_player.fire_tv_stick_4k_mbr
+      - media_player.firetvstick4klr
+      - media_player.firetvstickgbr
+      - media_player.firetvstick04kmbr
     
 
 
