@@ -9,7 +9,7 @@
   - platform: androidtv
     name: "Fire TV Master Bedroom"
     host: 192.168.1.184
-    exclude_unnamed_apps; true
+    exclude_unnamed_apps: true
     apps:
       com.amazon.tv.launcher: "Fire TV LR"
       com.netflix.ninja: "Netflix"
