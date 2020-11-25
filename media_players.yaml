@@ -11,7 +11,7 @@
     host: 192.168.1.184
     exclude_unnamed_apps: true
     apps:
-      com.amazon.tv.launcher: "Fire TV LR"
+      com.amazon.tv.launcher: "Fire TV MBR"
       com.netflix.ninja: "Netflix"
 
 #Yamaha RX-V479 AV Receiver in Living Room
