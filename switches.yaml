@@ -18,16 +18,17 @@
 # Master Garage Inside Light
 # Homeseer Node: 28
 # Ref ID: 206 Name: Lighting Garage Inside Garage Light
+# This node commented out - Jasco Switch Shorted Out - Replaced with TP Link HS200 Wifi Switch
 
-  - platform: mqtt
-    name: "Inside Garage Light"
-    payload_on: "on"
-    payload_off: "off"
-    unique_id: "InsideGarageLight"
-    state_topic: "CRUD-06/mcsMQTT/Garage/Lighting/Inside_Garage_Light"
-    command_topic: "CRUD-06/mcsMQTT/Garage/Lighting/Inside_Garage_Light/Control"
-    value_template: "{{ 'on' if value|int > 0 else 'off' }}"
-    optimistic: false
+#  - platform: mqtt
+#    name: "Inside Garage Light"
+#    payload_on: "on"
+#    payload_off: "off"
+#    unique_id: "InsideGarageLight"
+#    state_topic: "CRUD-06/mcsMQTT/Garage/Lighting/Inside_Garage_Light"
+#    command_topic: "CRUD-06/mcsMQTT/Garage/Lighting/Inside_Garage_Light/Control"
+#    value_template: "{{ 'on' if value|int > 0 else 'off' }}"
+#    optimistic: false
 
 # Kitchen Disposal Switch
 # Homeseer Node: 31
