@@ -24,7 +24,7 @@
       - light.master_bedroom_lights
       - light.office_lamps
       - switch.inside_entry_way_light
-      - switch.inside_garage_light
+      - switch.insidegaragelight
       - switch.master_closet_light
 
 #Door Lock Group
