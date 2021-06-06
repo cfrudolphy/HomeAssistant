@@ -17,7 +17,7 @@
       - on
       - circulation
       current_temperature: 76
-      target_temp_high: 74
+      target_temp_high: 73
       target_temp_low: 66
       fan_mode: auto
       friendly_name: Thermostat
