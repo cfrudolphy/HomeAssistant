@@ -24,7 +24,7 @@
     entities:
       - light.chuck_bed_lamp
       - light.chris_bed_lamp
-      - light.master_bedroom_fan_light
+      - light.master_fan_light
 
 #Master Bedroom Bed Lamp Group
   - platform: group
