@@ -5,15 +5,15 @@
   outside_lights:
     name: "Outside Lights"
     entities:
-      - switch.outside_entry_way_light
+      - switch.outside_entryway_light
       - switch.outside_garage_light
 
 #Entryway Light Group
   entryway_lights:
     name: "Entryway Lights"
     entities:
-      - switch.inside_entry_way_light
-      - switch.outside_entry_way_light
+      - switch.inside_entryway_light
+      - switch.outside_entryway_light
 
 #All Inside Light Group
   all_inside_lights:
@@ -23,9 +23,9 @@
       - light.living_room_lights
       - light.master_bedroom_lights
       - light.office_lamps
-      - switch.inside_entry_way_light
+      - switch.inside_entryway_light
       - switch.insidegaragelight
-      - switch.master_closet_light
+      - switch.closet_light
 
 #Door Lock Group
   all_door_locks:
@@ -54,21 +54,21 @@
       - person.christina_rudolphy
 
 #Amazon Echo/Dot Media Player Group
-  echomania:
-    name: "Echomania"
-    entities:
-      - media_player.mbrdot
-      - media_player.kitchenecho
-      - media_player.garagedot
-      - media_player.officedot
+#  echomania:
+#    name: "Echomania"
+#    entities:
+#      - media_player.mbrdot
+#      - media_player.kitchenecho
+#      - media_player.garagedot
+#      - media_player.officedot
 
 #Amazon Fire TV Media Player Group
-  firetvmania:
-    name: "FireTVmania"
-    entities:
-      - media_player.firetvstick4klr
-      - media_player.firetvstickgbr
-      - media_player.firetvstick04kmbr
+#  firetvmania:
+#    name: "FireTVmania"
+#    entities:
+#      - media_player.firetvstick4klr
+#      - media_player.firetvstickgbr
+#      - media_player.firetvstick04kmbr
     
 
 
