@@ -7,6 +7,7 @@
     entities:
       - switch.outside_entryway_light
       - switch.outside_garage_light
+      - switch.patio_lights
 
 #Entryway Light Group
   entryway_lights:
