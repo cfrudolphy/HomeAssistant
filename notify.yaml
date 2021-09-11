@@ -26,3 +26,10 @@
     duration: 10
     fontsize: "large"
     color: "indigo"
+
+  - platform: nfandroidtv
+    name: "Fire TV GBR"
+    host: 192.168.1.183
+    duration: 10
+    fontsize: "large"
+    color: "indigo"
