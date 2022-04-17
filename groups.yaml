@@ -7,7 +7,7 @@
     entities:
       - switch.outside_entryway_light
       - switch.outside_garage_light
-      - switch.patio_lights
+      - light.patio_lights
 
 #Entryway Light Group
   entryway_lights:
@@ -43,9 +43,10 @@
       - person.abita
       - person.emily
       - person.olga
-      - person.patty
       - person.chuck_rudolphy
       - person.christina_rudolphy
+      - person.john_charles
+      - person.jennifer
 
 #Chuck & Chris Location Group
   Chuck&Chris_location_group:
